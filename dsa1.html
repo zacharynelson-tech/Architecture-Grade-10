@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DSA I — Study Guide &amp; Practice Exam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C1E21; --sub:#6B7280; --line:#EDEBE7;
+  --bg:#FAF9F6; --card:#FFFFFF;
+  --accent:#2563EB; --accent-soft:#EFF4FF;
+  --good:#15803D; --good-soft:#EAF7EE;
+}
+*{box-sizing:border-box;}
+body{ margin:0; font-family:'Inter', sans-serif; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }
+.frame{ max-width:760px; margin:0 auto; padding:28px 20px 70px; }
+
+.nav-pills{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:28px; }
+.pill{ display:inline-flex; align-items:center; justify-content:center; text-decoration:none; color:var(--sub); font-size:12.5px; font-weight:600; }
+.pill.num{ width:26px; height:26px; border-radius:50%; background:var(--card); border:1px solid var(--line); }
+.pill.num:hover{ border-color:var(--accent); color:var(--accent); }
+.pill.num.active{ background:var(--accent); color:#fff; border-color:var(--accent); }
+.pill.text{ padding:0 10px; }
+.nav-sep{ width:1px; height:14px; background:var(--line); margin:0 4px; }
+
+h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px; margin:0 0 6px; letter-spacing:-0.01em; }
+.tagline{ color:var(--sub); font-size:14.5px; max-width:65ch; margin:0 0 14px; }
+.tags{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:30px; }
+.tag{ font-size:11.5px; font-weight:600; color:var(--accent); background:var(--accent-soft); padding:4px 9px; border-radius:999px; }
+
+.ref-section{ margin-bottom:26px; padding-bottom:26px; border-bottom:1px solid var(--line); }
+.ref-section h3{ font-family:'Manrope', sans-serif; font-size:15px; font-weight:700; margin:0 0 14px; }
+
+.fw-cols{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media (max-width:600px){ .fw-cols{ grid-template-columns:1fr; } }
+.fw-std{ font-size:11px; color:var(--accent); font-weight:700; margin-bottom:6px; }
+.fw-cols h5{ font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--sub); margin:10px 0 5px; font-weight:700; }
+.fw-cols ul{ margin:0; padding-left:16px; }
+.fw-cols li{ font-size:13px; margin-bottom:4px; color:#333; }
+
+.obj-row{ display:flex; gap:22px; flex-wrap:wrap; }
+.obj-item{ flex:1; min-width:180px; }
+.obj-item .lvl{ font-size:10.5px; font-weight:800; text-transform:uppercase; color:var(--accent); letter-spacing:.05em; margin-bottom:4px; }
+.obj-item p{ margin:0; font-size:13px; color:#333; }
+
+.lesson-list{ margin:0; padding:0; list-style:none; }
+.lesson-list li{ display:grid; grid-template-columns:52px 1fr; gap:12px; padding:7px 0; font-size:13px; }
+.lesson-list .d{ color:var(--sub); font-weight:600; font-size:11.5px; }
+.lesson-list strong{ font-weight:600; }
+.lesson-list span.desc{ color:var(--sub); }
+
+.chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+.chip{ font-size:12px; background:var(--card); border:1px solid var(--line); padding:4px 10px; border-radius:999px; color:#444; }
+
+.section-label{ font-family:'Manrope', sans-serif; font-size:15px; font-weight:700; margin:0 0 12px; }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:14px; }
+
+.assign{ border:1px solid var(--line); border-radius:12px; margin-bottom:10px; overflow:hidden; }
+.assign:last-child{ margin-bottom:0; }
+.assign-top{ display:flex; align-items:center; justify-content:space-between; padding:13px 16px; cursor:pointer; gap:10px; }
+.assign-top:hover{ background:#fafafa; }
+.assign-top h4{ margin:0 0 3px; font-size:14px; font-weight:600; }
+.assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
+.assign-left{ min-width:0; }
+.assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
+.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
+.assign-top.open .caret{ transform:rotate(90deg); }
+.assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
+.assign-body.open{ display:block; }
+.assign-desc{ color:#333; margin:0 0 10px; }
+.tier-row{ display:grid; grid-template-columns:90px 1fr; gap:12px; padding:9px 0; border-top:1px solid var(--line); font-size:13px; }
+.tier-row:first-of-type{ border-top:none; }
+.tier-badge{ font-size:10px; font-weight:800; text-transform:uppercase; padding:3px 0; border-radius:6px; text-align:center; height:fit-content; }
+.tier-badge.min{ background:#F1F2F4; color:#4B5563; }
+.tier-badge.prof{ background:var(--accent-soft); color:var(--accent); }
+.tier-badge.adv{ background:var(--good-soft); color:var(--good); }
+
+.quiz-link-card{ display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+.quiz-link-btn{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); padding:9px 16px; border-radius:9px; text-decoration:none; white-space:nowrap; }
+
+.project-card{ background:linear-gradient(135deg, var(--accent-soft), #fff); }
+.project-card p{ margin:0; font-size:13.5px; color:#333; }
+.placeholder-badge{ display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#92400E; background:#FEF3C7; padding:3px 9px; border-radius:999px; margin-left:8px; vertical-align:middle; }
+.placeholder-banner{ font-size:12.5px; color:#92400E; background:#FEF3C7; border-radius:10px; padding:10px 14px; margin-bottom:20px; }
+
+.quiz-q{ margin-bottom:14px; padding-bottom:13px; border-bottom:1px solid var(--line); }
+.quiz-q:last-of-type{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.quiz-q-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:7px; }
+.quiz-q-num{ font-weight:700; font-size:13.5px; }
+.quiz-std{ font-size:10px; font-weight:700; color:var(--accent); background:var(--accent-soft); padding:2px 7px; border-radius:999px; }
+.quiz-opts{ list-style:none; margin:0; padding:0; display:grid; gap:4px; }
+.quiz-opts li{ font-size:13px; color:#333; padding-left:20px; position:relative; }
+.quiz-opts li .let{ position:absolute; left:0; font-weight:700; color:var(--sub); }
+.quiz-key-toggle{ all:unset; cursor:pointer; font-size:12.5px; font-weight:700; color:var(--accent); background:var(--accent-soft); padding:8px 14px; border-radius:8px; display:inline-block; margin-top:10px; }
+.quiz-key{ display:none; margin-top:14px; padding:14px 16px; background:var(--bg); border-radius:10px; font-size:12.5px; }
+.quiz-key.open{ display:block; }
+.quiz-key div{ margin-bottom:4px; }
+.quiz-key div:last-child{ margin-bottom:0; }
+.quiz-jump{ display:block; padding:9px 13px; border-radius:10px; background:var(--bg); text-decoration:none; color:var(--ink); font-size:13px; font-weight:600; margin-bottom:7px; }
+.quiz-jump:hover{ background:var(--accent-soft); color:var(--accent); }
+
+.std-group{ margin-bottom:22px; }
+.std-group:last-child{ margin-bottom:0; }
+.std-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.std-code{ font-size:11px; font-weight:800; color:#fff; background:var(--accent); padding:2px 8px; border-radius:6px; }
+.std-name{ font-size:13.5px; font-weight:700; }
+.std-count{ font-size:11.5px; color:var(--sub); margin-left:auto; }
+.std-summary{ font-size:13px; color:#333; margin:0 0 10px; }
+.check-list{ margin:0; padding:0; list-style:none; }
+.check-list li{ display:flex; align-items:flex-start; gap:9px; padding:4px 0; font-size:13px; color:#333; }
+.check-list input{ margin-top:3px; flex:none; }
+
+.exam-block{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:16px; }
+
+.col-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:640px){ .col-2{ grid-template-columns:1fr; } }
+.dir-card{ display:flex; flex-direction:column; justify-content:center; min-height:78px; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:13px 15px; margin-bottom:10px; transition:border-color .15s ease; }
+.dir-card:hover{ border-color:var(--accent); }
+.dir-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:3px; }
+.dir-card h4{ margin:0; font-size:13.5px; }
+.dir-badge{ font-size:9.5px; font-weight:700; text-transform:uppercase; padding:2px 7px; border-radius:999px; white-space:nowrap; background:var(--good-soft); color:var(--good); }
+.dir-card p{ margin:0; font-size:11.5px; color:var(--sub); }
+.dir-overview{ background:linear-gradient(135deg, var(--accent-soft), #fff); border-color:transparent; margin-bottom:22px; }
+.dir-dsa{ background:linear-gradient(135deg, var(--good-soft), #fff); border-color:transparent; }
+.dir-dsa .dir-badge{ background:#fff; }
+
+.steps-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+@media (max-width:640px){ .steps-row{ grid-template-columns:1fr 1fr; } }
+.step .num{ font-family:'Manrope',sans-serif; font-weight:800; font-size:20px; color:var(--accent); margin-bottom:6px; }
+.step h4{ margin:0 0 4px; font-size:13.5px; }
+.step p{ margin:0; font-size:12.5px; color:var(--sub); }
+
+.tier-legend-row{ display:flex; gap:24px; flex-wrap:wrap; margin-bottom:16px; }
+.tier-legend-item{ flex:1; min-width:170px; }
+.tier-legend-item .name{ font-weight:800; font-size:12px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:2px; }
+.tier-legend-item.min .name{ color:#4B5563; } .tier-legend-item.prof .name{ color:var(--accent); } .tier-legend-item.adv .name{ color:var(--good); }
+.tier-legend-item .pts{ font-size:20px; font-weight:800; margin-bottom:4px; }
+.tier-legend-item p{ margin:0; font-size:12.5px; color:var(--sub); }
+.grade-note{ font-size:13px; color:var(--sub); margin:0; }
+
+footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-top:24px; }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="nav-pills">
+    <a class="pill text" href="home.html" style="color:var(--sub); font-weight:600;">&#8962; Home</a>
+    <div class="nav-sep"></div>
+    <span class="pill text" style="color:var(--ink); font-weight:700;">Cycle</span>
+    <a class="pill num" href="cycle-1.html">1</a><a class="pill num" href="cycle-2.html">2</a><a class="pill num" href="cycle-3.html">3</a><a class="pill num" href="cycle-4.html">4</a><a class="pill num" href="cycle-5.html">5</a><a class="pill num" href="cycle-6.html">6</a><a class="pill num" href="cycle-7.html">7</a><a class="pill num" href="cycle-8.html">8</a><a class="pill num" href="cycle-9.html">9</a><a class="pill num" href="cycle-10.html">10</a>
+  </div>
+  <h1 class="pagetitle">DSA I — Study Guide &amp; Practice Exam</h1>
+  <p class="tagline">Semester 1 Final Exam covers Cycles 1–5 (Standards 10.1–10.5). 50 questions on the real exam.</p>
+  
+  
+<div class="ref-section">
+  <h3>Study Guide</h3>
+  <p style="font-size:13px; color:var(--sub); margin:-6px 0 16px;">Check off each skill as you feel confident with it — pulled directly from the official exam outline.</p>
+  <div class="std-group">
+      <div class="std-head"><span class="std-code">10.1</span><span class="std-name">Architectural Communication Techniques — Software</span><span class="std-count">8 questions on exam</span></div>
+      <p class="std-summary">Core software tools used all year: AutoCAD (layers, blocks, object snaps, paper/model space), Adobe Acrobat and Photoshop (markups, file conversion, image editing), and SketchUp (3D modeling with Push/Pull). Review what each tool is for and why CAD improves speed and accuracy over hand-drafting.</p>
+      <ul class="check-list"><li><input type="checkbox" id="c-10.1-0"><label for="c-10.1-0">Identify and use AutoCAD tools including layers, blocks, and paper/model space</label></li><li><input type="checkbox" id="c-10.1-1"><label for="c-10.1-1">Demonstrate drawing accuracy using object snaps, ortho, and grips</label></li><li><input type="checkbox" id="c-10.1-2"><label for="c-10.1-2">Explain benefits of CAD for drafting efficiency and accuracy</label></li><li><input type="checkbox" id="c-10.1-3"><label for="c-10.1-3">Identify proper file extensions and printing procedures in AutoCAD</label></li><li><input type="checkbox" id="c-10.1-4"><label for="c-10.1-4">Apply Adobe Suite (Photoshop/Acrobat) tools for file conversion, editing, and markups</label></li><li><input type="checkbox" id="c-10.1-5"><label for="c-10.1-5">Demonstrate image editing and masking techniques in Photoshop</label></li><li><input type="checkbox" id="c-10.1-6"><label for="c-10.1-6">Identify key SketchUp interface elements and axis (X,Y,Z) for modeling</label></li><li><input type="checkbox" id="c-10.1-7"><label for="c-10.1-7">Demonstrate basic 3D modeling using the Push/Pull tool in SketchUp</label></li></ul>
+    </div><div class="std-group">
+      <div class="std-head"><span class="std-code">10.2</span><span class="std-name">Architectural Drawing Standards</span><span class="std-count">15 questions on exam</span></div>
+      <p class="std-summary">The 'rules of the road' for every drawing: the alphabet of lines, correct scale selection, hatch patterns for materials, annotations (dimensions, tags, callouts), and title block/sheet organization. Know the purpose of each line type and how to pick the right scale for a given drawing.</p>
+      <ul class="check-list"><li><input type="checkbox" id="c-10.2-0"><label for="c-10.2-0">Identify line types and line weights (“alphabet of lines”) and their uses</label></li><li><input type="checkbox" id="c-10.2-1"><label for="c-10.2-1">Determine correct scales for residential plans, sections, and elevations</label></li><li><input type="checkbox" id="c-10.2-2"><label for="c-10.2-2">Interpret and apply hatch patterns to represent materials in different views</label></li><li><input type="checkbox" id="c-10.2-3"><label for="c-10.2-3">Identify common annotations including sections, elevations, tags, and dimensions</label></li><li><input type="checkbox" id="c-10.2-4"><label for="c-10.2-4">Explain proper title block use, sheet sizes, and organization of drawing sets</label></li></ul>
+    </div><div class="std-group">
+      <div class="std-head"><span class="std-code">10.3</span><span class="std-name">Architectural Documentation Sets &amp; Basic Blueprint Reading</span><span class="std-count">6 questions on exam</span></div>
+      <p class="std-summary">Knowing which drawings belong in a set and why. Presentation, working, and construction sets serve different audiences and levels of detail. Match a drawing type to its purpose and know where to find legends and schedules.</p>
+      <ul class="check-list"><li><input type="checkbox" id="c-10.3-0"><label for="c-10.3-0">Identify types of drawing sets: presentation, working, and construction</label></li><li><input type="checkbox" id="c-10.3-1"><label for="c-10.3-1">Match drawing types (site plan, floor plan, elevations, RCP, details) to their purposes</label></li><li><input type="checkbox" id="c-10.3-2"><label for="c-10.3-2">Explain how and where to locate legends, schedules, and notes</label></li><li><input type="checkbox" id="c-10.3-3"><label for="c-10.3-3">Interpret the purpose of elevations and detail drawings in construction</label></li></ul>
+    </div><div class="std-group">
+      <div class="std-head"><span class="std-code">10.4</span><span class="std-name">Site Plans and Plot Plans</span><span class="std-count">12 questions on exam</span></div>
+      <p class="std-summary">Everything about the land a building sits on: property lines, setbacks, zoning, topography (contour lines and slope), and building orientation (sun path, environmental impact). Review reading a contour map and how zoning/setbacks limit what can be built.</p>
+      <ul class="check-list"><li><input type="checkbox" id="c-10.4-0"><label for="c-10.4-0">Identify components of site and plot plans: property lines, setbacks, contour lines, utilities</label></li><li><input type="checkbox" id="c-10.4-1"><label for="c-10.4-1">Explain purpose of plot plans for permitting and construction</label></li><li><input type="checkbox" id="c-10.4-2"><label for="c-10.4-2">Interpret zoning ordinances, setbacks, and property line definitions</label></li><li><input type="checkbox" id="c-10.4-3"><label for="c-10.4-3">Analyze site topography using contour spacing and slope indicators</label></li><li><input type="checkbox" id="c-10.4-4"><label for="c-10.4-4">Evaluate building orientation factors: sun path, topography, and environmental impact</label></li></ul>
+    </div><div class="std-group">
+      <div class="std-head"><span class="std-code">10.5</span><span class="std-name">Residential Foundation Systems</span><span class="std-count">9 questions on exam</span></div>
+      <p class="std-summary">The three main foundation types (slab, crawlspace, full basement), common materials (concrete, ICF, brick shelf, precast), reinforcement (rebar, WWM), and components (footings, stem walls, vapor barriers, drains). Know why each component exists.</p>
+      <ul class="check-list"><li><input type="checkbox" id="c-10.5-0"><label for="c-10.5-0">Identify and compare foundation types: slab, crawlspace, full basement</label></li><li><input type="checkbox" id="c-10.5-1"><label for="c-10.5-1">Determine frost line depth and code-related foundation requirements</label></li><li><input type="checkbox" id="c-10.5-2"><label for="c-10.5-2">Identify foundation materials: concrete, ICF, stone, brick shelf, precast</label></li><li><input type="checkbox" id="c-10.5-3"><label for="c-10.5-3">Explain reinforcement methods: rebar, welded wire mesh, compression principles</label></li><li><input type="checkbox" id="c-10.5-4"><label for="c-10.5-4">Identify common foundation components: footings, stem walls, vapor barriers, drains</label></li><li><input type="checkbox" id="c-10.5-5"><label for="c-10.5-5">Determine typical dimensions for slabs, footings, and foundation wall exposure</label></li></ul>
+    </div>
+</div>
+<p class="section-label">Practice Exam — 50 Questions</p>
+<p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Weighted to match the real exam — 10.2 and 10.4 carry the most questions, just like the actual DSA.</p>
+<div class="exam-block">
+      <div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">1.</span><span class="quiz-std">10.1</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which AutoCAD feature lets you organize drawing elements into separate, toggleable groups?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Blocks</li><li><span class="let">B.</span> Layers</li><li><span class="let">C.</span> Paper space</li><li><span class="let">D.</span> Grips</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">2.</span><span class="quiz-std">10.1</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Object snaps (Osnaps) in AutoCAD are used to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Automatically snap the cursor to precise points like endpoints and midpoints</li><li><span class="let">B.</span> Change line color</li><li><span class="let">C.</span> Print a drawing</li><li><span class="let">D.</span> Create a new layer</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">3.</span><span class="quiz-std">10.1</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">In AutoCAD, “Paper Space” is primarily used for:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> 3D modeling only</li><li><span class="let">B.</span> Laying out and printing a finished sheet at scale</li><li><span class="let">C.</span> Storing unused blocks</li><li><span class="let">D.</span> Nothing — it's not a real feature</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">4.</span><span class="quiz-std">10.1</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">In SketchUp, the Push/Pull tool is used to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Rotate an object</li><li><span class="let">B.</span> Extrude a flat face into a 3D form</li><li><span class="let">C.</span> Change material color</li><li><span class="let">D.</span> Measure distances</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">5.</span><span class="quiz-std">10.1</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which Adobe program is most commonly used for markups, PDF conversion, and reviewing drawings?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Photoshop</li><li><span class="let">B.</span> Acrobat</li><li><span class="let">C.</span> Premiere</li><li><span class="let">D.</span> InDesign</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">6.</span><span class="quiz-std">10.1</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A key benefit of CAD over hand drafting is:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> It requires no computer</li><li><span class="let">B.</span> Increased drafting speed, accuracy, and easy revision</li><li><span class="let">C.</span> It eliminates the need for scale</li><li><span class="let">D.</span> It replaces the design process</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">7.</span><span class="quiz-std">10.1</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which SketchUp axis typically represents vertical height?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> X</li><li><span class="let">B.</span> Y</li><li><span class="let">C.</span> Z</li><li><span class="let">D.</span> None</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">8.</span><span class="quiz-std">10.1</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">In Photoshop, which tool would you most likely use to isolate part of an image for editing?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Selection/masking tools</li><li><span class="let">B.</span> Push/Pull</li><li><span class="let">C.</span> Object snap</li><li><span class="let">D.</span> Layer state</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">9.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which line type is used to show an element hidden from view in the current drawing?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Object line</li><li><span class="let">B.</span> Hidden line</li><li><span class="let">C.</span> Centerline</li><li><span class="let">D.</span> Break line</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">10.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A property line is typically drawn using:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> A solid heavy line</li><li><span class="let">B.</span> A series of long dashes separated by two short dashes or dots</li><li><span class="let">C.</span> A thin continuous line</li><li><span class="let">D.</span> A zigzag line</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">11.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which line weight is most appropriate for a wall cut in section?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Very light</li><li><span class="let">B.</span> Light</li><li><span class="let">C.</span> Medium</li><li><span class="let">D.</span> Heavy</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">12.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">An architect's scale is used to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Draw perfectly straight lines</li><li><span class="let">B.</span> Measure and convert between actual and scaled dimensions</li><li><span class="let">C.</span> Erase mistakes cleanly</li><li><span class="let">D.</span> Cut paper</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">13.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Hatch patterns on a drawing are primarily used to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Represent different materials in section or plan view</li><li><span class="let">B.</span> Show electrical circuits</li><li><span class="let">C.</span> Indicate paint color</li><li><span class="let">D.</span> Show furniture</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">14.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which of the following is an example of an annotation on a drawing?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> A dimension line</li><li><span class="let">B.</span> A wall</li><li><span class="let">C.</span> A window</li><li><span class="let">D.</span> A roof</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">15.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A title block on a drawing sheet typically includes:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Project name, sheet number, scale, and date</li><li><span class="let">B.</span> Only the architect's signature</li><li><span class="let">C.</span> The building's utility bills</li><li><span class="let">D.</span> A material list only</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">16.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Standard sheet sizes and consistent title blocks across a drawing set help ensure:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Faster printing only</li><li><span class="let">B.</span> Graphical consistency and easier navigation of the set</li><li><span class="let">C.</span> Lower project cost</li><li><span class="let">D.</span> Fewer inspections</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">17.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A centerline is typically drawn as:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> A thin line of alternating long and short dashes marking an axis of symmetry</li><li><span class="let">B.</span> A thick solid line</li><li><span class="let">C.</span> A cloud-shaped line</li><li><span class="let">D.</span> A dotted heavy line</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">18.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Construction lines are used to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Guide initial layout and are typically lightly drawn, often erased or not plotted</li><li><span class="let">B.</span> Show the final heavy outline</li><li><span class="let">C.</span> Represent underground utilities</li><li><span class="let">D.</span> Show hidden roof framing</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">19.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A drawing at 1/2"=1'-0" is _____ than the same drawing at 1/4"=1'-0".</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Smaller</li><li><span class="let">B.</span> Larger (more detail)</li><li><span class="let">C.</span> Identical</li><li><span class="let">D.</span> Upside down</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">20.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which of the following is typically shown using a hatch pattern rather than a line?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> A dimension</li><li><span class="let">B.</span> A material like concrete or insulation in section</li><li><span class="let">C.</span> A door swing</li><li><span class="let">D.</span> A north arrow</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">21.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">An elevation tag on a floor plan indicates:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Where an interior or exterior elevation view is being referenced from</li><li><span class="let">B.</span> The paint color</li><li><span class="let">C.</span> The furniture layout</li><li><span class="let">D.</span> The square footage</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">22.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A door tag on a floor plan typically corresponds to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> An entry in the door schedule with size, type, and hardware info</li><li><span class="let">B.</span> The room's paint color</li><li><span class="let">C.</span> The HVAC tonnage</li><li><span class="let">D.</span> The electrical panel size</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">23.</span><span class="quiz-std">10.2</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Consistent sheet numbering (e.g., A-101, A-102) across a drawing set helps:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Make sheets easy to locate and reference</li><li><span class="let">B.</span> Change the scale automatically</li><li><span class="let">C.</span> Replace the need for a title block</li><li><span class="let">D.</span> Determine the construction cost</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">24.</span><span class="quiz-std">10.3</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which drawing type would show the layout of rooms, walls, doors, and windows?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Elevation</li><li><span class="let">B.</span> Floor plan</li><li><span class="let">C.</span> Detail</li><li><span class="let">D.</span> Site plan</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">25.</span><span class="quiz-std">10.3</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A Reflected Ceiling Plan (RCP) is used to show:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Foundation details</li><li><span class="let">B.</span> Ceiling-mounted elements like lights and fixtures</li><li><span class="let">C.</span> Site drainage</li><li><span class="let">D.</span> Roof pitch</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">26.</span><span class="quiz-std">10.3</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A presentation drawing set is primarily intended to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Communicate design intent to a client</li><li><span class="let">B.</span> Provide exact construction dimensions</li><li><span class="let">C.</span> List every nail and screw</li><li><span class="let">D.</span> Replace a building permit</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">27.</span><span class="quiz-std">10.3</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which type of drawing set would a contractor rely on most to bid and build a project?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Presentation set</li><li><span class="let">B.</span> Working/construction set</li><li><span class="let">C.</span> Marketing brochure</li><li><span class="let">D.</span> Site photo album</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">28.</span><span class="quiz-std">10.3</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Schedules on a drawing set (such as a door or window schedule) are used to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> List repetitive information like sizes and types in one organized table</li><li><span class="let">B.</span> Show only the site boundary</li><li><span class="let">C.</span> Replace all other drawings</li><li><span class="let">D.</span> Show furniture placement</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">29.</span><span class="quiz-std">10.3</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Detail drawings are typically drawn at:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> A larger scale than the main plan to show a specific condition clearly</li><li><span class="let">B.</span> A smaller scale than the plan</li><li><span class="let">C.</span> No scale at all</li><li><span class="let">D.</span> The same scale as the site plan only</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">30.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which of the following is NOT typically shown on a site plan?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Property lines</li><li><span class="let">B.</span> North arrow</li><li><span class="let">C.</span> Interior furniture layout</li><li><span class="let">D.</span> Utility locations</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">31.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A setback is best defined as:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> The distance a structure must be located from a property line</li><li><span class="let">B.</span> The height limit of a building</li><li><span class="let">C.</span> The type of foundation used</li><li><span class="let">D.</span> A drainage requirement</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">32.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Zoning ordinances primarily regulate:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Interior finishes</li><li><span class="let">B.</span> Allowed uses, height, and coverage on a site</li><li><span class="let">C.</span> Furniture placement</li><li><span class="let">D.</span> Paint colors</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">33.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">On a topographic map, contour lines spaced close together indicate:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> A flat area</li><li><span class="let">B.</span> A steep slope</li><li><span class="let">C.</span> A body of water</li><li><span class="let">D.</span> A property line</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">34.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Orienting a building to take advantage of the sun's path for heating/lighting is called:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Passive solar design</li><li><span class="let">B.</span> Zoning variance</li><li><span class="let">C.</span> Site grading</li><li><span class="let">D.</span> Site drainage</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">35.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Utility locations shown on a site plan typically include:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Water, sewer, electric, and gas connections</li><li><span class="let">B.</span> Interior furniture</li><li><span class="let">C.</span> Paint colors</li><li><span class="let">D.</span> Roof shingles</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">36.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A plot plan is often required by a municipality primarily to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Support a building permit application</li><li><span class="let">B.</span> Decorate a presentation</li><li><span class="let">C.</span> Replace the need for zoning review</li><li><span class="let">D.</span> Show interior finishes</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">37.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Interpreting a property line definition often requires reviewing:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> A legal survey or plat</li><li><span class="let">B.</span> A paint chart</li><li><span class="let">C.</span> A furniture catalog</li><li><span class="let">D.</span> A hatch legend</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">38.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A required setback distance is measured from the:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Property line to the building</li><li><span class="let">B.</span> Roof ridge to the eave</li><li><span class="let">C.</span> Floor to the ceiling</li><li><span class="let">D.</span> Window to the door</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">39.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A steep slope on a site most directly affects:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Paint color choice</li><li><span class="let">B.</span> Foundation type and site design decisions</li><li><span class="let">C.</span> Furniture layout</li><li><span class="let">D.</span> HVAC brand</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">40.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which tool/resource is commonly used to research existing site topography?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> GIS mapping or a topographic survey</li><li><span class="let">B.</span> A hatch legend</li><li><span class="let">C.</span> A door schedule</li><li><span class="let">D.</span> A paint chart</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">41.</span><span class="quiz-std">10.4</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Evaluating a site's environmental impact during orientation planning might include considering:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Solar exposure, prevailing wind, and vegetation</li><li><span class="let">B.</span> Only interior paint colors</li><li><span class="let">C.</span> Only furniture placement</li><li><span class="let">D.</span> Only door hardware finish</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">42.</span><span class="quiz-std">10.5</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which foundation type is built directly on the ground with no crawlspace or basement?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Full basement</li><li><span class="let">B.</span> Slab-on-grade</li><li><span class="let">C.</span> Pier foundation</li><li><span class="let">D.</span> Pole foundation</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">43.</span><span class="quiz-std">10.5</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">The frost line refers to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> The depth soil freezes in winter, affecting foundation depth requirements</li><li><span class="let">B.</span> The property line</li><li><span class="let">C.</span> A type of hatch pattern</li><li><span class="let">D.</span> A roof slope measurement</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">44.</span><span class="quiz-std">10.5</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Which of these is a common foundation material?</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Drywall</li><li><span class="let">B.</span> Insulated Concrete Forms (ICF)</li><li><span class="let">C.</span> Carpet</li><li><span class="let">D.</span> Vinyl siding</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">45.</span><span class="quiz-std">10.5</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Rebar is used in concrete foundations primarily to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Add color</li><li><span class="let">B.</span> Provide tensile reinforcement</li><li><span class="let">C.</span> Waterproof the surface</li><li><span class="let">D.</span> Speed up curing</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">46.</span><span class="quiz-std">10.5</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A footing's main function is to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Distribute the building's load to the soil</li><li><span class="let">B.</span> Provide insulation</li><li><span class="let">C.</span> Support the roof directly</li><li><span class="let">D.</span> Waterproof the walls</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">47.</span><span class="quiz-std">10.5</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">A vapor barrier in a foundation system is used to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Prevent moisture from migrating into the building</li><li><span class="let">B.</span> Add structural strength</li><li><span class="let">C.</span> Reinforce concrete</li><li><span class="let">D.</span> Provide a finished look</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">48.</span><span class="quiz-std">10.5</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Compression in a concrete foundation refers to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> A pushing/squeezing force the material resists well</li><li><span class="let">B.</span> A pulling force</li><li><span class="let">C.</span> A twisting force</li><li><span class="let">D.</span> A shear force only</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">49.</span><span class="quiz-std">10.5</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Typical footing dimensions are determined based on:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> Soil bearing capacity and the load of the structure above</li><li><span class="let">B.</span> Paint color</li><li><span class="let">C.</span> Roof pitch</li><li><span class="let">D.</span> Window size</li></ul>
+        </div><div class="quiz-q">
+          <div class="quiz-q-head"><span class="quiz-q-num">50.</span><span class="quiz-std">10.5</span></div>
+          <p style="margin:0 0 8px; font-size:13.5px;">Foundation wall exposure refers to:</p>
+          <ul class="quiz-opts"><li><span class="let">A.</span> How much of the foundation wall is visible above the finished grade</li><li><span class="let">B.</span> The wall's paint color</li><li><span class="let">C.</span> The roof's slope</li><li><span class="let">D.</span> The window's U-value</li></ul>
+        </div>
+      <button class="quiz-key-toggle" onclick="toggleQuizKey(this)">Show Answer Key</button>
+      <div class="quiz-key"><div><strong>1.</strong> B — Layers</div><div><strong>2.</strong> A</div><div><strong>3.</strong> B</div><div><strong>4.</strong> B</div><div><strong>5.</strong> B — Acrobat</div><div><strong>6.</strong> B</div><div><strong>7.</strong> C</div><div><strong>8.</strong> A</div><div><strong>9.</strong> B</div><div><strong>10.</strong> B</div><div><strong>11.</strong> D</div><div><strong>12.</strong> B</div><div><strong>13.</strong> A</div><div><strong>14.</strong> A</div><div><strong>15.</strong> A</div><div><strong>16.</strong> B</div><div><strong>17.</strong> A</div><div><strong>18.</strong> A</div><div><strong>19.</strong> B</div><div><strong>20.</strong> B</div><div><strong>21.</strong> A</div><div><strong>22.</strong> A</div><div><strong>23.</strong> A</div><div><strong>24.</strong> B</div><div><strong>25.</strong> B</div><div><strong>26.</strong> A</div><div><strong>27.</strong> B</div><div><strong>28.</strong> A</div><div><strong>29.</strong> A</div><div><strong>30.</strong> C</div><div><strong>31.</strong> A</div><div><strong>32.</strong> B</div><div><strong>33.</strong> B</div><div><strong>34.</strong> A</div><div><strong>35.</strong> A</div><div><strong>36.</strong> A</div><div><strong>37.</strong> A</div><div><strong>38.</strong> A</div><div><strong>39.</strong> B</div><div><strong>40.</strong> A</div><div><strong>41.</strong> A</div><div><strong>42.</strong> B</div><div><strong>43.</strong> A</div><div><strong>44.</strong> B</div><div><strong>45.</strong> B</div><div><strong>46.</strong> A</div><div><strong>47.</strong> A</div><div><strong>48.</strong> A</div><div><strong>49.</strong> A</div><div><strong>50.</strong> A</div></div>
+    </div>
+
+  <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
+</div>
+<script>
+function toggleAssign(el){
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
+function toggleQuizKey(btn){
+  const key = btn.nextElementSibling;
+  key.classList.toggle('open');
+  btn.textContent = key.classList.contains('open') ? 'Hide Answer Key' : 'Show Answer Key';
+}
+</script>
+</body>
+</html>

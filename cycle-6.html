@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cycle 6 — Loads, Framing, Floor Systems, Stairs & Decks</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C1E21; --sub:#6B7280; --line:#EDEBE7;
+  --bg:#FAF9F6; --card:#FFFFFF;
+  --accent:#2563EB; --accent-soft:#EFF4FF;
+  --good:#15803D; --good-soft:#EAF7EE;
+}
+*{box-sizing:border-box;}
+body{ margin:0; font-family:'Inter', sans-serif; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }
+.frame{ max-width:760px; margin:0 auto; padding:28px 20px 70px; }
+
+.nav-pills{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:28px; }
+.pill{ display:inline-flex; align-items:center; justify-content:center; text-decoration:none; color:var(--sub); font-size:12.5px; font-weight:600; }
+.pill.num{ width:26px; height:26px; border-radius:50%; background:var(--card); border:1px solid var(--line); }
+.pill.num:hover{ border-color:var(--accent); color:var(--accent); }
+.pill.num.active{ background:var(--accent); color:#fff; border-color:var(--accent); }
+.pill.text{ padding:0 10px; }
+.nav-sep{ width:1px; height:14px; background:var(--line); margin:0 4px; }
+
+h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px; margin:0 0 6px; letter-spacing:-0.01em; }
+.tagline{ color:var(--sub); font-size:14.5px; max-width:65ch; margin:0 0 14px; }
+.tags{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:30px; }
+.tag{ font-size:11.5px; font-weight:600; color:var(--accent); background:var(--accent-soft); padding:4px 9px; border-radius:999px; }
+
+.ref-section{ margin-bottom:26px; padding-bottom:26px; border-bottom:1px solid var(--line); }
+.ref-section h3{ font-family:'Manrope', sans-serif; font-size:15px; font-weight:700; margin:0 0 14px; }
+
+.fw-cols{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media (max-width:600px){ .fw-cols{ grid-template-columns:1fr; } }
+.fw-std{ font-size:11px; color:var(--accent); font-weight:700; margin-bottom:6px; }
+.fw-cols h5{ font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--sub); margin:10px 0 5px; font-weight:700; }
+.fw-cols ul{ margin:0; padding-left:16px; }
+.fw-cols li{ font-size:13px; margin-bottom:4px; color:#333; }
+
+.obj-row{ display:flex; gap:22px; flex-wrap:wrap; }
+.obj-item{ flex:1; min-width:180px; }
+.obj-item .lvl{ font-size:10.5px; font-weight:800; text-transform:uppercase; color:var(--accent); letter-spacing:.05em; margin-bottom:4px; }
+.obj-item p{ margin:0; font-size:13px; color:#333; }
+
+.lesson-list{ margin:0; padding:0; list-style:none; }
+.lesson-list li{ display:grid; grid-template-columns:52px 1fr; gap:12px; padding:7px 0; font-size:13px; }
+.lesson-list .d{ color:var(--sub); font-weight:600; font-size:11.5px; }
+.lesson-list strong{ font-weight:600; }
+.lesson-list span.desc{ color:var(--sub); }
+
+.chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+.chip{ font-size:12px; background:var(--card); border:1px solid var(--line); padding:4px 10px; border-radius:999px; color:#444; }
+
+.section-label{ font-family:'Manrope', sans-serif; font-size:15px; font-weight:700; margin:0 0 12px; }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:14px; }
+
+.assign{ border:1px solid var(--line); border-radius:12px; margin-bottom:10px; overflow:hidden; }
+.assign:last-child{ margin-bottom:0; }
+.assign-top{ display:flex; align-items:center; justify-content:space-between; padding:13px 16px; cursor:pointer; gap:10px; }
+.assign-top:hover{ background:#fafafa; }
+.assign-top h4{ margin:0 0 3px; font-size:14px; font-weight:600; }
+.assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
+.assign-left{ min-width:0; }
+.assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
+.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
+.assign-top.open .caret{ transform:rotate(90deg); }
+.assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
+.assign-body.open{ display:block; }
+.assign-desc{ color:#333; margin:0 0 10px; }
+.tier-row{ display:grid; grid-template-columns:90px 1fr; gap:12px; padding:9px 0; border-top:1px solid var(--line); font-size:13px; }
+.tier-row:first-of-type{ border-top:none; }
+.tier-badge{ font-size:10px; font-weight:800; text-transform:uppercase; padding:3px 0; border-radius:6px; text-align:center; height:fit-content; }
+.tier-badge.min{ background:#F1F2F4; color:#4B5563; }
+.tier-badge.prof{ background:var(--accent-soft); color:var(--accent); }
+.tier-badge.adv{ background:var(--good-soft); color:var(--good); }
+
+.quiz-link-card{ display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+.quiz-link-btn{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); padding:9px 16px; border-radius:9px; text-decoration:none; white-space:nowrap; }
+
+.project-card{ background:linear-gradient(135deg, var(--accent-soft), #fff); }
+.project-card p{ margin:0; font-size:13.5px; color:#333; }
+.placeholder-badge{ display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#92400E; background:#FEF3C7; padding:3px 9px; border-radius:999px; margin-left:8px; vertical-align:middle; }
+.placeholder-banner{ font-size:12.5px; color:#92400E; background:#FEF3C7; border-radius:10px; padding:10px 14px; margin-bottom:20px; }
+
+.quiz-q{ margin-bottom:14px; padding-bottom:13px; border-bottom:1px solid var(--line); }
+.quiz-q:last-of-type{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.quiz-q-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:7px; }
+.quiz-q-num{ font-weight:700; font-size:13.5px; }
+.quiz-std{ font-size:10px; font-weight:700; color:var(--accent); background:var(--accent-soft); padding:2px 7px; border-radius:999px; }
+.quiz-opts{ list-style:none; margin:0; padding:0; display:grid; gap:4px; }
+.quiz-opts li{ font-size:13px; color:#333; padding-left:20px; position:relative; }
+.quiz-opts li .let{ position:absolute; left:0; font-weight:700; color:var(--sub); }
+.quiz-key-toggle{ all:unset; cursor:pointer; font-size:12.5px; font-weight:700; color:var(--accent); background:var(--accent-soft); padding:8px 14px; border-radius:8px; display:inline-block; margin-top:10px; }
+.quiz-key{ display:none; margin-top:14px; padding:14px 16px; background:var(--bg); border-radius:10px; font-size:12.5px; }
+.quiz-key.open{ display:block; }
+.quiz-key div{ margin-bottom:4px; }
+.quiz-key div:last-child{ margin-bottom:0; }
+.quiz-jump{ display:block; padding:9px 13px; border-radius:10px; background:var(--bg); text-decoration:none; color:var(--ink); font-size:13px; font-weight:600; margin-bottom:7px; }
+.quiz-jump:hover{ background:var(--accent-soft); color:var(--accent); }
+
+.std-group{ margin-bottom:22px; }
+.std-group:last-child{ margin-bottom:0; }
+.std-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.std-code{ font-size:11px; font-weight:800; color:#fff; background:var(--accent); padding:2px 8px; border-radius:6px; }
+.std-name{ font-size:13.5px; font-weight:700; }
+.std-count{ font-size:11.5px; color:var(--sub); margin-left:auto; }
+.std-summary{ font-size:13px; color:#333; margin:0 0 10px; }
+.check-list{ margin:0; padding:0; list-style:none; }
+.check-list li{ display:flex; align-items:flex-start; gap:9px; padding:4px 0; font-size:13px; color:#333; }
+.check-list input{ margin-top:3px; flex:none; }
+
+.exam-block{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:16px; }
+
+.col-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:640px){ .col-2{ grid-template-columns:1fr; } }
+.dir-card{ display:flex; flex-direction:column; justify-content:center; min-height:78px; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:13px 15px; margin-bottom:10px; transition:border-color .15s ease; }
+.dir-card:hover{ border-color:var(--accent); }
+.dir-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:3px; }
+.dir-card h4{ margin:0; font-size:13.5px; }
+.dir-badge{ font-size:9.5px; font-weight:700; text-transform:uppercase; padding:2px 7px; border-radius:999px; white-space:nowrap; background:var(--good-soft); color:var(--good); }
+.dir-card p{ margin:0; font-size:11.5px; color:var(--sub); }
+.dir-overview{ background:linear-gradient(135deg, var(--accent-soft), #fff); border-color:transparent; margin-bottom:22px; }
+.dir-dsa{ background:linear-gradient(135deg, var(--good-soft), #fff); border-color:transparent; }
+.dir-dsa .dir-badge{ background:#fff; }
+
+.steps-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+@media (max-width:640px){ .steps-row{ grid-template-columns:1fr 1fr; } }
+.step .num{ font-family:'Manrope',sans-serif; font-weight:800; font-size:20px; color:var(--accent); margin-bottom:6px; }
+.step h4{ margin:0 0 4px; font-size:13.5px; }
+.step p{ margin:0; font-size:12.5px; color:var(--sub); }
+
+.tier-legend-row{ display:flex; gap:24px; flex-wrap:wrap; margin-bottom:16px; }
+.tier-legend-item{ flex:1; min-width:170px; }
+.tier-legend-item .name{ font-weight:800; font-size:12px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:2px; }
+.tier-legend-item.min .name{ color:#4B5563; } .tier-legend-item.prof .name{ color:var(--accent); } .tier-legend-item.adv .name{ color:var(--good); }
+.tier-legend-item .pts{ font-size:20px; font-weight:800; margin-bottom:4px; }
+.tier-legend-item p{ margin:0; font-size:12.5px; color:var(--sub); }
+.grade-note{ font-size:13px; color:var(--sub); margin:0; }
+
+footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-top:24px; }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="nav-pills">
+    <a class="pill text" href="home.html" style="color:var(--sub); font-weight:600;">&#8962; Home</a>
+    <div class="nav-sep"></div>
+    <span class="pill text" style="color:var(--ink); font-weight:700;">Cycle</span>
+    <a class="pill num" href="cycle-1.html">1</a><a class="pill num" href="cycle-2.html">2</a><a class="pill num" href="cycle-3.html">3</a><a class="pill num" href="cycle-4.html">4</a><a class="pill num" href="cycle-5.html">5</a><a class="pill num active" href="cycle-6.html">6</a><a class="pill num" href="cycle-7.html">7</a><a class="pill num" href="cycle-8.html">8</a><a class="pill num" href="cycle-9.html">9</a><a class="pill num" href="cycle-10.html">10</a>
+  </div>
+  <h1 class="pagetitle">Cycle 6 — Loads, Framing, Floor Systems, Stairs & Decks</h1>
+  <p class="tagline">The house's actual layout appears for the first time — and since it's 2 stories, a code-compliant stair connecting the floors is required, not optional.</p>
+  <div class="tags"><span class="tag">10.6.1</span><span class="tag">10.6.2</span><span class="tag">10.7.1</span><span class="tag">10.7.2</span><span class="tag">10.9.7</span><span class="tag">10.9.2</span><span class="tag">10.9.6</span></div>
+  <div class="ref-section"><h3>Learning Objectives</h3><div class="obj-row"><div class="obj-item"><div class="lvl">Understand</div><p>Explain how span and load calculations determine floor framing member sizes.</p></div><div class="obj-item"><div class="lvl">Apply</div><p>Apply span tables and trade math to calculate joist sizing and stair rise/run.</p></div><div class="obj-item"><div class="lvl">Create</div><p>Create a floor framing plan and a code-compliant stair connecting two floors.</p></div></div></div><div class="ref-section"><h3>Big Ideas &amp; Essential Questions</h3><div class="fw-cols"><div>
+          <div class="fw-std">10.6 — Residential Framing Systems</div>
+          <h5>Big Idea(s)</h5><ul><li>A house is built with careful consideration for its structural stability</li><li>A house is only as strong as the weakest link in the system</li></ul>
+          <h5>Essential Question(s)</h5><ul><li>How can specific situations dictate the appropriate type of structural framing?</li><li>What factors must be considered when completing load calculations?</li></ul>
+        </div><div>
+          <div class="fw-std">10.7 — Residential Assemblies (floor and wall)</div>
+          <h5>Big Idea(s)</h5><ul><li>Code requirements and design will influence assembly construction</li></ul>
+          <h5>Essential Question(s)</h5><ul><li>How does the framing method affect the assembly?</li></ul>
+        </div><div>
+          <div class="fw-std">10.9 — Architectural Elements</div>
+          <h5>Big Idea(s)</h5><ul><li>Integration of architectural elements will have a positive impact on your overall project</li></ul>
+          <h5>Essential Question(s)</h5><ul><li>How can architects use finishes and elements to enhance the aesthetics of a home?</li></ul>
+        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 11 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Loads on Buildings</strong><br><span class="desc">Dead, live, wind, and earthquake loads — how each acts on a structure.</span></span></li><li><span class="d">Day 2</span><span><strong>Framing Methods</strong><br><span class="desc">Platform vs. balloon vs. post-and-beam framing — past and present methods compared.</span></span></li><li><span class="d">Day 3</span><span><strong>Wood Joists & Floor Framing</strong><br><span class="desc">Joist sizing, spacing, and how a floor system is put together.</span></span></li><li><span class="d">Day 4</span><span><strong>Practice: Reading a Span Table</strong><br><span class="desc">Guided practice looking up joist sizes using a code span table.</span></span></li><li><span class="d">Day 5</span><span><strong>Wood Beams & Post-Beam Connections</strong><br><span class="desc">How beams support joists and how those connections are made.</span></span></li><li><span class="d">Day 6</span><span><strong>Trade Math — Framing Calculations</strong><br><span class="desc">Area, square footage, and span calculations applied to a real framing plan.</span></span></li><li><span class="d">Day 7</span><span><strong>Wood Decking & Exterior Framing</strong><br><span class="desc">How deck framing borrows from standard floor framing principles.</span></span></li><li><span class="d">Day 8</span><span><strong>Stair Design Fundamentals</strong><br><span class="desc">Rise, run, headroom, and code requirements for a safe stair.</span></span></li><li><span class="d">Day 9</span><span><strong>Practice: Calculating Stair Rise & Run</strong><br><span class="desc">Guided practice calculating a code-compliant stair for a given floor-to-floor height.</span></span></li><li><span class="d">Day 10</span><span><strong>Stair Types & Plans</strong><br><span class="desc">Straight, L-shaped, U-shaped, and winder stairs — how each is drawn in plan.</span></span></li><li><span class="d">Day 11</span><span><strong>Workshop / Synthesis Day</strong><br><span class="desc">Supervised work day finalizing the Floor Framing Plan and stair design. Preview Cycle 7.</span></span></li></ul></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">dead load</span><span class="chip">live load</span><span class="chip">wind load</span><span class="chip">seismic load</span><span class="chip">platform framing</span><span class="chip">balloon framing</span><span class="chip">joist</span><span class="chip">span table</span><span class="chip">beam</span><span class="chip">rise</span><span class="chip">run</span><span class="chip">stringer</span><span class="chip">tread</span><span class="chip">riser</span><span class="chip">headroom</span></div></div><p class="section-label">Independent Assignments</p>
+    <p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
+    <div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Reading + Guided Notes</h4><div class="sub">Building Construction Illustrated (Ching) — pp. 2.08–2.10 (Loads, Wind Loads, Earthquake L...</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">Building Construction Illustrated (Ching) — pp. 2.08–2.10 (Loads, Wind Loads, Earthquake Loads) · pp. 4.26–4.40 (Wood Joists through Wood Decking) · pp. 9.03–9.12 (Stair Design through Spiral Stairs)</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Read all assigned pages. Complete the guided reading notes — Concept Log covering loads, floor framing, and stair topics, plus the Dig Deeper questions.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a 3-paragraph response: how loads affect framing choices; how joist spacing/span relate to size; how rise and run are calculated for a code-compliant stair.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a one-page infographic on either floor framing or stair anatomy, with an original diagram.</div></div></div>
+        </div><div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Reflection Check-In</h4><div class="sub">Formative — complete after Reading &amp; Guided Notes</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">Formative — not scored on the tier scale. A checkpoint before moving into hands-on work.</p><ul style="margin:0; padding-left:18px; font-size:13px; color:#333;"><li>Which load type (dead, live, wind, seismic) feels most intuitive to you, and which is hardest to picture?</li><li>What's one thing you didn't know went into calculating a stair before this reading?</li><li>Why do you think stair code requirements are so strict?</li><li>What part of floor framing are you most looking forward to building?</li></ul></div>
+        </div><div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Vocabulary Application</h4><div class="sub">15 terms — see Vocabulary above</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">15 terms — see Vocabulary above</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the vocabulary form; one full sentence per term.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a real-world example or photo for each term.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a one-page visual reference sheet.</div></div></div>
+        </div><div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Model Making — Floor Framing & Stair Model</h4><div class="sub">Provided framing templates + your own rise/run calculations</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">Provided framing templates + your own rise/run calculations</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Build a basic floor framing model (sill, rim joist, joists, blocking).</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a simple stair model using your calculated rise/run.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a written code-compliance check comparing your stair to code minimums.</div></div></div>
+        </div><div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Software Exercise — AutoCAD Floor Framing Plan</h4><div class="sub">Your Cycle 2–5 site &amp; foundation drawings</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">Your Cycle 2–5 site &amp; foundation drawings</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Draft a basic floor framing plan showing joist direction and spacing.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus label joist size and span.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus add the stair location and framing around the stair opening.</div></div></div>
+        </div><div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Architectural History — Arts &amp; Crafts / Prairie School</h4><div class="sub">Choose one: Frank Lloyd Wright · Greene &amp; Greene · Gustav Stickley</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">Choose one: Frank Lloyd Wright · Greene &amp; Greene · Gustav Stickley</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the architect/era profile template using 2+ sources.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a paragraph on how this movement approached craftsmanship and structure.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same + paragraph, plus a sketch of one signature Prairie/Craftsman detail.</div></div></div>
+        </div><div class="card quiz-link-card">
+      <div>
+        <p class="section-label" style="margin-bottom:2px;">End of Unit Quiz</p>
+        <p style="color:var(--sub); font-size:13px; margin:0;">10 questions covering this cycle's standards, with an answer key.</p>
+      </div>
+      <a class="quiz-link-btn" href="quizzes.html#cycle-6" target="_blank" rel="noopener">Open Quiz &#8599;</a>
+    </div><div class="card quiz-link-card" style="margin-top:20px;">
+      <div>
+        <p class="section-label" style="margin-bottom:2px;">Exam Prep</p>
+        <p style="color:var(--sub); font-size:13px; margin:0;">This cycle's standards (10.6.1, 10.6.2, 10.7.1, 10.7.2, 10.9.7, 10.9.2, 10.9.6) are covered in your <strong>DSA II Study Guide &amp; Practice Exam</strong>.</p>
+      </div>
+      <a class="quiz-link-btn" href="dsa2.html">Open DSA II &#8599;</a>
+    </div><div class="card project-card">
+      <p class="section-label" style="margin-bottom:6px; display:inline;">Project Deliverable</p><span class="placeholder-badge">Placeholder</span>
+      <p style="margin-top:6px;"><strong>Project Deliverable — Floor Plan(s), Floor Framing Plan, Required Stair</strong><br>Produce floor plans for both stories plus a Floor Framing Plan, and design a code-compliant stair connecting the two floors.</p>
+    </div>
+  <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
+</div>
+<script>
+function toggleAssign(el){
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
+function toggleQuizKey(btn){
+  const key = btn.nextElementSibling;
+  key.classList.toggle('open');
+  btn.textContent = key.classList.contains('open') ? 'Hide Answer Key' : 'Show Answer Key';
+}
+</script>
+</body>
+</html>

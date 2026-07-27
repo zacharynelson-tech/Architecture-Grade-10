@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cycle 9 — Capstone Build</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C1E21; --sub:#6B7280; --line:#EDEBE7;
+  --bg:#FAF9F6; --card:#FFFFFF;
+  --accent:#2563EB; --accent-soft:#EFF4FF;
+  --good:#15803D; --good-soft:#EAF7EE;
+}
+*{box-sizing:border-box;}
+body{ margin:0; font-family:'Inter', sans-serif; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }
+.frame{ max-width:760px; margin:0 auto; padding:28px 20px 70px; }
+
+.nav-pills{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:28px; }
+.pill{ display:inline-flex; align-items:center; justify-content:center; text-decoration:none; color:var(--sub); font-size:12.5px; font-weight:600; }
+.pill.num{ width:26px; height:26px; border-radius:50%; background:var(--card); border:1px solid var(--line); }
+.pill.num:hover{ border-color:var(--accent); color:var(--accent); }
+.pill.num.active{ background:var(--accent); color:#fff; border-color:var(--accent); }
+.pill.text{ padding:0 10px; }
+.nav-sep{ width:1px; height:14px; background:var(--line); margin:0 4px; }
+
+h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px; margin:0 0 6px; letter-spacing:-0.01em; }
+.tagline{ color:var(--sub); font-size:14.5px; max-width:65ch; margin:0 0 14px; }
+.tags{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:30px; }
+.tag{ font-size:11.5px; font-weight:600; color:var(--accent); background:var(--accent-soft); padding:4px 9px; border-radius:999px; }
+
+.ref-section{ margin-bottom:26px; padding-bottom:26px; border-bottom:1px solid var(--line); }
+.ref-section h3{ font-family:'Manrope', sans-serif; font-size:15px; font-weight:700; margin:0 0 14px; }
+
+.fw-cols{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media (max-width:600px){ .fw-cols{ grid-template-columns:1fr; } }
+.fw-std{ font-size:11px; color:var(--accent); font-weight:700; margin-bottom:6px; }
+.fw-cols h5{ font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--sub); margin:10px 0 5px; font-weight:700; }
+.fw-cols ul{ margin:0; padding-left:16px; }
+.fw-cols li{ font-size:13px; margin-bottom:4px; color:#333; }
+
+.obj-row{ display:flex; gap:22px; flex-wrap:wrap; }
+.obj-item{ flex:1; min-width:180px; }
+.obj-item .lvl{ font-size:10.5px; font-weight:800; text-transform:uppercase; color:var(--accent); letter-spacing:.05em; margin-bottom:4px; }
+.obj-item p{ margin:0; font-size:13px; color:#333; }
+
+.lesson-list{ margin:0; padding:0; list-style:none; }
+.lesson-list li{ display:grid; grid-template-columns:52px 1fr; gap:12px; padding:7px 0; font-size:13px; }
+.lesson-list .d{ color:var(--sub); font-weight:600; font-size:11.5px; }
+.lesson-list strong{ font-weight:600; }
+.lesson-list span.desc{ color:var(--sub); }
+
+.chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+.chip{ font-size:12px; background:var(--card); border:1px solid var(--line); padding:4px 10px; border-radius:999px; color:#444; }
+
+.section-label{ font-family:'Manrope', sans-serif; font-size:15px; font-weight:700; margin:0 0 12px; }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:14px; }
+
+.assign{ border:1px solid var(--line); border-radius:12px; margin-bottom:10px; overflow:hidden; }
+.assign:last-child{ margin-bottom:0; }
+.assign-top{ display:flex; align-items:center; justify-content:space-between; padding:13px 16px; cursor:pointer; gap:10px; }
+.assign-top:hover{ background:#fafafa; }
+.assign-top h4{ margin:0 0 3px; font-size:14px; font-weight:600; }
+.assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
+.assign-left{ min-width:0; }
+.assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
+.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
+.assign-top.open .caret{ transform:rotate(90deg); }
+.assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
+.assign-body.open{ display:block; }
+.assign-desc{ color:#333; margin:0 0 10px; }
+.tier-row{ display:grid; grid-template-columns:90px 1fr; gap:12px; padding:9px 0; border-top:1px solid var(--line); font-size:13px; }
+.tier-row:first-of-type{ border-top:none; }
+.tier-badge{ font-size:10px; font-weight:800; text-transform:uppercase; padding:3px 0; border-radius:6px; text-align:center; height:fit-content; }
+.tier-badge.min{ background:#F1F2F4; color:#4B5563; }
+.tier-badge.prof{ background:var(--accent-soft); color:var(--accent); }
+.tier-badge.adv{ background:var(--good-soft); color:var(--good); }
+
+.quiz-link-card{ display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+.quiz-link-btn{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); padding:9px 16px; border-radius:9px; text-decoration:none; white-space:nowrap; }
+
+.project-card{ background:linear-gradient(135deg, var(--accent-soft), #fff); }
+.project-card p{ margin:0; font-size:13.5px; color:#333; }
+.placeholder-badge{ display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#92400E; background:#FEF3C7; padding:3px 9px; border-radius:999px; margin-left:8px; vertical-align:middle; }
+.placeholder-banner{ font-size:12.5px; color:#92400E; background:#FEF3C7; border-radius:10px; padding:10px 14px; margin-bottom:20px; }
+
+.quiz-q{ margin-bottom:14px; padding-bottom:13px; border-bottom:1px solid var(--line); }
+.quiz-q:last-of-type{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.quiz-q-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:7px; }
+.quiz-q-num{ font-weight:700; font-size:13.5px; }
+.quiz-std{ font-size:10px; font-weight:700; color:var(--accent); background:var(--accent-soft); padding:2px 7px; border-radius:999px; }
+.quiz-opts{ list-style:none; margin:0; padding:0; display:grid; gap:4px; }
+.quiz-opts li{ font-size:13px; color:#333; padding-left:20px; position:relative; }
+.quiz-opts li .let{ position:absolute; left:0; font-weight:700; color:var(--sub); }
+.quiz-key-toggle{ all:unset; cursor:pointer; font-size:12.5px; font-weight:700; color:var(--accent); background:var(--accent-soft); padding:8px 14px; border-radius:8px; display:inline-block; margin-top:10px; }
+.quiz-key{ display:none; margin-top:14px; padding:14px 16px; background:var(--bg); border-radius:10px; font-size:12.5px; }
+.quiz-key.open{ display:block; }
+.quiz-key div{ margin-bottom:4px; }
+.quiz-key div:last-child{ margin-bottom:0; }
+.quiz-jump{ display:block; padding:9px 13px; border-radius:10px; background:var(--bg); text-decoration:none; color:var(--ink); font-size:13px; font-weight:600; margin-bottom:7px; }
+.quiz-jump:hover{ background:var(--accent-soft); color:var(--accent); }
+
+.std-group{ margin-bottom:22px; }
+.std-group:last-child{ margin-bottom:0; }
+.std-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.std-code{ font-size:11px; font-weight:800; color:#fff; background:var(--accent); padding:2px 8px; border-radius:6px; }
+.std-name{ font-size:13.5px; font-weight:700; }
+.std-count{ font-size:11.5px; color:var(--sub); margin-left:auto; }
+.std-summary{ font-size:13px; color:#333; margin:0 0 10px; }
+.check-list{ margin:0; padding:0; list-style:none; }
+.check-list li{ display:flex; align-items:flex-start; gap:9px; padding:4px 0; font-size:13px; color:#333; }
+.check-list input{ margin-top:3px; flex:none; }
+
+.exam-block{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:16px; }
+
+.col-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:640px){ .col-2{ grid-template-columns:1fr; } }
+.dir-card{ display:flex; flex-direction:column; justify-content:center; min-height:78px; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:13px 15px; margin-bottom:10px; transition:border-color .15s ease; }
+.dir-card:hover{ border-color:var(--accent); }
+.dir-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:3px; }
+.dir-card h4{ margin:0; font-size:13.5px; }
+.dir-badge{ font-size:9.5px; font-weight:700; text-transform:uppercase; padding:2px 7px; border-radius:999px; white-space:nowrap; background:var(--good-soft); color:var(--good); }
+.dir-card p{ margin:0; font-size:11.5px; color:var(--sub); }
+.dir-overview{ background:linear-gradient(135deg, var(--accent-soft), #fff); border-color:transparent; margin-bottom:22px; }
+.dir-dsa{ background:linear-gradient(135deg, var(--good-soft), #fff); border-color:transparent; }
+.dir-dsa .dir-badge{ background:#fff; }
+
+.steps-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+@media (max-width:640px){ .steps-row{ grid-template-columns:1fr 1fr; } }
+.step .num{ font-family:'Manrope',sans-serif; font-weight:800; font-size:20px; color:var(--accent); margin-bottom:6px; }
+.step h4{ margin:0 0 4px; font-size:13.5px; }
+.step p{ margin:0; font-size:12.5px; color:var(--sub); }
+
+.tier-legend-row{ display:flex; gap:24px; flex-wrap:wrap; margin-bottom:16px; }
+.tier-legend-item{ flex:1; min-width:170px; }
+.tier-legend-item .name{ font-weight:800; font-size:12px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:2px; }
+.tier-legend-item.min .name{ color:#4B5563; } .tier-legend-item.prof .name{ color:var(--accent); } .tier-legend-item.adv .name{ color:var(--good); }
+.tier-legend-item .pts{ font-size:20px; font-weight:800; margin-bottom:4px; }
+.tier-legend-item p{ margin:0; font-size:12.5px; color:var(--sub); }
+.grade-note{ font-size:13px; color:var(--sub); margin:0; }
+
+footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-top:24px; }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="nav-pills">
+    <a class="pill text" href="home.html" style="color:var(--sub); font-weight:600;">&#8962; Home</a>
+    <div class="nav-sep"></div>
+    <span class="pill text" style="color:var(--ink); font-weight:700;">Cycle</span>
+    <a class="pill num" href="cycle-1.html">1</a><a class="pill num" href="cycle-2.html">2</a><a class="pill num" href="cycle-3.html">3</a><a class="pill num" href="cycle-4.html">4</a><a class="pill num" href="cycle-5.html">5</a><a class="pill num" href="cycle-6.html">6</a><a class="pill num" href="cycle-7.html">7</a><a class="pill num" href="cycle-8.html">8</a><a class="pill num active" href="cycle-9.html">9</a><a class="pill num" href="cycle-10.html">10</a>
+  </div>
+  <h1 class="pagetitle">Cycle 9 — Capstone Build</h1>
+  <p class="tagline">No new content — this cycle is dedicated time to pull Cycles 1–8 into one coordinated drawing set and go deep on one architectural element of your choice.</p>
+  <div class="tags"><span class="tag">Applied</span></div>
+  <div class="ref-section"><h3>Learning Objectives</h3><div class="obj-row"><div class="obj-item"><div class="lvl">Understand</div><p>Explain how each drawing in the set relates to and depends on the others.</p></div><div class="obj-item"><div class="lvl">Apply</div><p>Apply previously learned drafting and modeling skills to complete a coordinated drawing set.</p></div><div class="obj-item"><div class="lvl">Create</div><p>Create a detailed, presentation-quality study of a chosen architectural element.</p></div></div></div><div class="ref-section"><h3>Big Ideas &amp; Essential Questions</h3><div class="fw-cols"><div>
+          <div class="fw-std">10.11 — Professional Practice in Architecture</div>
+          <h5>Big Idea(s)</h5><ul><li>Professional and technical skills are demonstrated through the process and product of hands-on architectural work</li><li>Architectural projects provide opportunities to apply core competencies in real-world settings</li></ul>
+          <h5>Essential Question(s)</h5><ul><li>How do professional behaviors and employability skills impact success in Architecture?</li><li>What practices lead to high-quality workmanship?</li></ul>
+        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 10 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Capstone Kickoff — Choosing Your Element</strong><br><span class="desc">Review the 5 element options (stair, deck, doors/windows, millwork, dormer) and choose which to develop in depth.</span></span></li><li><span class="d">Day 2</span><span><strong>Workshop — Base Set Coordination</strong><br><span class="desc">Supervised work day checking that site, foundation, floor, wall, and roof drawings all agree with each other.</span></span></li><li><span class="d">Day 3</span><span><strong>Workshop — Base Set Coordination</strong><br><span class="desc">Continued coordination work — fixing mismatches between sheets.</span></span></li><li><span class="d">Day 4</span><span><strong>Chosen Element — Research & Planning</strong><br><span class="desc">Revisit your chosen element's earlier reading and plan the detail drawing or model you'll produce.</span></span></li><li><span class="d">Day 5</span><span><strong>Workshop — Element Detail Drafting</strong><br><span class="desc">Supervised work day drafting your chosen element's detail drawing.</span></span></li><li><span class="d">Day 6</span><span><strong>Workshop — Element Detail Drafting</strong><br><span class="desc">Continued detail drafting and refinement.</span></span></li><li><span class="d">Day 7</span><span><strong>Workshop — Element Model or Render</strong><br><span class="desc">Supervised work day building a model or 3D render of your chosen element (Advanced tier).</span></span></li><li><span class="d">Day 8</span><span><strong>Peer Review</strong><br><span class="desc">Structured peer review of drawing sets — give and receive feedback on completeness and clarity.</span></span></li><li><span class="d">Day 9</span><span><strong>Workshop — Final Revisions</strong><br><span class="desc">Supervised work day incorporating peer feedback.</span></span></li><li><span class="d">Day 10</span><span><strong>Workshop / Wrap-Up</strong><br><span class="desc">Final workshop day. Preview Cycle 10 (Review &amp; Portfolio).</span></span></li></ul></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">presentation set</span><span class="chip">detail drawing</span><span class="chip">coordination</span><span class="chip">portfolio</span><span class="chip">peer review</span></div></div><p class="section-label">Independent Assignments</p>
+    <p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
+    <div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Reflection Check-In</h4><div class="sub">Formative — complete at the start of the cycle</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">Formative — not scored on the tier scale. A checkpoint before moving into hands-on work.</p><ul style="margin:0; padding-left:18px; font-size:13px; color:#333;"><li>Which architectural element are you choosing to go deeper on, and why?</li><li>What's one place your drawing set doesn't fully agree with itself yet (a mismatch between sheets)?</li><li>What's the biggest skill you've built so far this year that you're proud of?</li><li>What feedback are you hoping to get from a peer review?</li></ul></div>
+        </div><div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Base Set Coordination</h4><div class="sub">Your completed Cycles 1–8 drawings</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">Your completed Cycles 1–8 drawings</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Assemble your site, foundation, floor, wall, and roof drawings into one set with consistent title blocks.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus fix any dimensional or labeling mismatches between sheets.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus add a cover sheet with a sheet index and project description.</div></div></div>
+        </div><div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Chosen Element — Detail Study</h4><div class="sub">Stair, deck, doors/windows, millwork, or dormer — your choice</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">Stair, deck, doors/windows, millwork, or dormer — your choice</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Show your chosen element in plan view within your existing drawings.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a dedicated detail drawing (section or elevation) of the element at proper scale.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a physical model or rendered 3D view of the element, presentation-ready.</div></div></div>
+        </div><div class="assign">
+          <div class="assign-top" onclick="toggleAssign(this)">
+            <div class="assign-left"><h4>Architectural History — Your Choice</h4><div class="sub">Pick an architect whose work connects to your chosen element or style</div></div>
+            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+          </div>
+          <div class="assign-body"><p class="assign-desc">Pick an architect whose work connects to your chosen element or style</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the architect/era profile template for an architect of your choice.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a paragraph connecting their work to your chosen capstone element.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same + paragraph, plus a sketch of one signature detail from their work.</div></div></div>
+        </div><div class="card quiz-link-card" style="margin-top:20px;">
+      <div>
+        <p class="section-label" style="margin-bottom:2px;">Exam Prep</p>
+        <p style="color:var(--sub); font-size:13px; margin:0;">This cycle's standards (Applied) are covered in your <strong>DSA II Study Guide &amp; Practice Exam</strong>.</p>
+      </div>
+      <a class="quiz-link-btn" href="dsa2.html">Open DSA II &#8599;</a>
+    </div><div class="card project-card">
+      <p class="section-label" style="margin-bottom:6px; display:inline;">Project Deliverable</p><span class="placeholder-badge">Placeholder</span>
+      <p style="margin-top:6px;"><strong>Project Deliverable — Coordinated Base Set + Element Deep-Dive</strong><br>Your full drawing set (site through roof) coordinated into one set, plus a detailed study of one architectural element you chose to go deeper on.</p>
+    </div>
+  <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
+</div>
+<script>
+function toggleAssign(el){
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
+function toggleQuizKey(btn){
+  const key = btn.nextElementSibling;
+  key.classList.toggle('open');
+  btn.textContent = key.classList.contains('open') ? 'Hide Answer Key' : 'Show Answer Key';
+}
+</script>
+</body>
+</html>
