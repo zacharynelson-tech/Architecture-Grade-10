@@ -65,7 +65,8 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
 .assign-left{ min-width:0; }
 .assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
-.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.cls-link{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); border:none; padding:7px 14px; border-radius:9px; text-decoration:none; white-space:nowrap;}
+.cls-link:hover{ background:#1d4fd1; }
 .caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
 .assign-top.open .caret{ transform:rotate(90deg); }
 .assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
@@ -161,6 +162,10 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
 .critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
 .critique-list li:last-child{ margin-bottom:0; }
 .critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
+
+.assign.project-assign{ border-color:#DDD6FE; }
+.project-sq{ width:10px; height:10px; border-radius:2px; background:#7C3AED; display:inline-block; margin-right:8px; flex:none; }
+.project-assign .assign-left h4{ display:flex; align-items:center; }
 </style>
 </head>
 <body>
@@ -177,7 +182,7 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
   <p class="tagline">Full deliverable description, tailored rubric, and (if applicable) critique questions for this cycle. See the Overview page for the fixed house parameters and Final Project Rubric.</p>
   
   <div class="card project-card">
-      <p class="section-label" style="margin-bottom:6px;">Project Deliverable</p>
+      <p class="section-label" style="margin-bottom:6px;">Design Project</p>
       <p style="margin:0 0 8px;"><strong>Floor Framing Plan, Stair Design & Title Block Standard</strong><br>The midpoint — structure gets resolved, and the title block you build here gets reused on every sheet for the rest of the year.</p>
       <ul class="check-list" style="background:#fff; border-radius:10px; padding:10px 14px 10px 30px; margin:10px 0 12px;"><li>Floor Framing Plan</li><li>Code-compliant stair design connecting both floors</li><li>Title block template created and applied to all sheets so far</li></ul>
       <div class="rubric-title">Cycle Check-In Rubric</div><div class="rubric-wrap"><table class="rubric"><tr><th>Category</th><th>Beginning (1)</th><th>Developing (2)</th><th>Proficient (3)</th><th>Exemplary (4)</th></tr><tr><td class="cat">Technical Accuracy</td><td>Framing conventions or stair rise/run calculations contain major errors (e.g., non-code-compliant stair).</td><td>Mostly correct, with minor framing or calculation errors.</td><td>Framing conventions and stair calculations are correct and code-compliant.</td><td>Framing plan, stair design, and title block are flawless and precisely executed.</td></tr><tr><td class="cat">Completeness</td><td>Missing the framing plan, stair design, or title block.</td><td>All present, but at least one is significantly underdeveloped.</td><td>Floor Framing Plan, a code-compliant stair, and an applied title block are all present.</td><td>All elements complete, plus additional structural detail (e.g., beam sizing notes) beyond the minimum.</td></tr><tr><td class="cat">Craftsmanship & Presentation</td><td>Framing plan and title block are messy or inconsistent.</td><td>Generally neat, with some inconsistency in line weights or title block alignment.</td><td>Clean, professional framing plan and a well-organized title block.</td><td>Presentation-quality framing plan and title block.</td></tr><tr><td class="cat">Coordination & Consistency</td><td>Framing plan doesn't match the floor plan or foundation plan.</td><td>Mostly consistent, with at least one dimensional mismatch.</td><td>Framing plan is fully consistent with both the floor plan and the foundation plan.</td><td>Fully consistent, with clear evidence of checking framing against both plans.</td></tr><tr><td class="cat">Original Design Development</td><td>Stair placement is a default afterthought with no evident spatial thinking.</td><td>Some spatial reasoning evident, but the stair placement feels arbitrary.</td><td>Stair design and placement reflect genuine, functional spatial thinking.</td><td>Stair design reflects sophisticated spatial reasoning and enhances how the house will actually be used.</td></tr></table></div>

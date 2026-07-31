@@ -65,7 +65,8 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
 .assign-left{ min-width:0; }
 .assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
-.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.cls-link{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); border:none; padding:7px 14px; border-radius:9px; text-decoration:none; white-space:nowrap;}
+.cls-link:hover{ background:#1d4fd1; }
 .caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
 .assign-top.open .caret{ transform:rotate(90deg); }
 .assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
@@ -161,6 +162,10 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
 .critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
 .critique-list li:last-child{ margin-bottom:0; }
 .critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
+
+.assign.project-assign{ border-color:#DDD6FE; }
+.project-sq{ width:10px; height:10px; border-radius:2px; background:#7C3AED; display:inline-block; margin-right:8px; flex:none; }
+.project-assign .assign-left h4{ display:flex; align-items:center; }
 </style>
 </head>
 <body>
@@ -184,42 +189,54 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
           <div class="fw-std">10.9 — Architectural Elements</div>
           <h5>Big Idea(s)</h5><ul><li>Integration of architectural elements will have a positive impact on your overall project</li></ul>
           <h5>Essential Question(s)</h5><ul><li>How can a fireplace/chimney affect the design of a home?</li></ul>
-        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 10 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Wall Framing Methods</strong><br><span class="desc">Balloon vs. platform vs. wood stud framing — how walls go up over the floor framing from Cycle 6.</span></span></li><li><span class="d">Day 2</span><span><strong>Wall Components & Sheathing</strong><br><span class="desc">Studs, plates, blocking, sheathing — the anatomy of a wall assembly.</span></span></li><li><span class="d">Day 3</span><span><strong>Thermal Insulation & R-Value</strong><br><span class="desc">How insulation type and R-value affect energy performance.</span></span></li><li><span class="d">Day 4</span><span><strong>Practice: Comparing Insulation Types</strong><br><span class="desc">Guided practice comparing insulation options for cost, R-value, and sustainability.</span></span></li><li><span class="d">Day 5</span><span><strong>Moisture Control & Ventilation</strong><br><span class="desc">Vapor retarders and ventilation — why walls need to breathe correctly.</span></span></li><li><span class="d">Day 6</span><span><strong>Fireplaces & Chimneys</strong><br><span class="desc">Fireplace requirements and how a masonry chimney is constructed.</span></span></li><li><span class="d">Day 7</span><span><strong>Doors, Windows & Openings</strong><br><span class="desc">How door and window openings are framed within a wall assembly.</span></span></li><li><span class="d">Day 8</span><span><strong>Millwork & Trim</strong><br><span class="desc">Molding, casing, and trim — how finish millwork completes a wall.</span></span></li><li><span class="d">Day 9</span><span><strong>AutoCAD Practice — Wall Section</strong><br><span class="desc">Draft a wall section drawing showing framing, insulation, and finish layers.</span></span></li><li><span class="d">Day 10</span><span><strong>Workshop / Synthesis Day</strong><br><span class="desc">Supervised work day finalizing the Wall Section drawing and Elevations. Preview Cycle 8.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">stud</span><span class="chip">sole plate</span><span class="chip">sheathing</span><span class="chip">R-value</span><span class="chip">vapor retarder</span><span class="chip">ventilation</span><span class="chip">fireplace</span><span class="chip">chimney</span><span class="chip">flue</span><span class="chip">doorframe</span><span class="chip">window opening</span><span class="chip">millwork</span><span class="chip">molding</span><span class="chip">trim/casing</span></div></div><p class="section-label">Independent Assignments</p>
-    <p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
+        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 10 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Wall Framing Methods</strong><br><span class="desc">Balloon vs. platform vs. wood stud framing — how walls go up over the floor framing from Cycle 6.</span></span></li><li><span class="d">Day 2</span><span><strong>Wall Components & Sheathing</strong><br><span class="desc">Studs, plates, blocking, sheathing — the anatomy of a wall assembly.</span></span></li><li><span class="d">Day 3</span><span><strong>Thermal Insulation & R-Value</strong><br><span class="desc">How insulation type and R-value affect energy performance.</span></span></li><li><span class="d">Day 4</span><span><strong>Practice: Comparing Insulation Types</strong><br><span class="desc">Guided practice comparing insulation options for cost, R-value, and sustainability.</span></span></li><li><span class="d">Day 5</span><span><strong>Moisture Control & Ventilation</strong><br><span class="desc">Vapor retarders and ventilation — why walls need to breathe correctly.</span></span></li><li><span class="d">Day 6</span><span><strong>Fireplaces & Chimneys</strong><br><span class="desc">Fireplace requirements and how a masonry chimney is constructed.</span></span></li><li><span class="d">Day 7</span><span><strong>Doors, Windows & Openings</strong><br><span class="desc">How door and window openings are framed within a wall assembly.</span></span></li><li><span class="d">Day 8</span><span><strong>Millwork & Trim</strong><br><span class="desc">Molding, casing, and trim — how finish millwork completes a wall.</span></span></li><li><span class="d">Day 9</span><span><strong>AutoCAD Practice — Wall Section</strong><br><span class="desc">Draft a wall section drawing showing framing, insulation, and finish layers.</span></span></li><li><span class="d">Day 10</span><span><strong>Workshop / Synthesis Day</strong><br><span class="desc">Supervised work day finalizing the Wall Section drawing and Elevations. Preview Cycle 8.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">stud</span><span class="chip">sole plate</span><span class="chip">sheathing</span><span class="chip">R-value</span><span class="chip">vapor retarder</span><span class="chip">ventilation</span><span class="chip">fireplace</span><span class="chip">chimney</span><span class="chip">flue</span><span class="chip">doorframe</span><span class="chip">window opening</span><span class="chip">millwork</span><span class="chip">molding</span><span class="chip">trim/casing</span></div></div><p class="section-label">Design Project</p>
+    <div class="assign project-assign">
+      <div class="assign-top" onclick="toggleAssign(this)">
+        <div class="assign-left"><h4><span class="project-sq"></span>Roof Plan</h4><div class="sub">Due this cycle — includes a Design Critique</div></div>
+        <div class="assign-meta"><span class="caret">&#9656;</span></div>
+      </div>
+      <div class="assign-body">
+        <p class="assign-desc"><strong>Roof Plan</strong> — due this cycle. Includes a Design Critique this cycle.</p>
+        <ul style="margin:10px 0 0; padding-left:18px; font-size:13px; color:#333;"><li>Roof Plan (ridges, hips, valleys, slope notation)</li></ul>
+        <p style="margin:12px 0 0;"><a class="quiz-link-btn" href="project-7.html" target="_blank" rel="noopener">View Full Details, Rubric &amp; Critique &#8599;</a></p>
+      </div>
+    </div><p class="section-label">Independent Assignments</p>
+    <a class="cls-link" href="https://classroom.google.com/w/ODcxMTY2NjIyNzQw/t/all" target="_blank" rel="noopener" style="display:inline-block; margin-bottom:10px;">Open Google Classroom &#8599;</a>
+    <p style="font-size:12.5px; color:var(--sub); margin:-2px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
     <div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Reading + Guided Notes</h4><div class="sub">Building Construction Illustrated (Ching) — pp. 5.41–5.49 (Balloon/Platform/Wood Stud Fram...</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Building Construction Illustrated (Ching) — pp. 5.41–5.49 (Balloon/Platform/Wood Stud Framing) · pp. 7.39–7.47 (Thermal Resistance through Ventilation) · pp. 9.18–9.21 (Fireplaces through Prefab Fireplaces) · pp. 8.02–8.10 (Doors &amp; Windows through Wood Doorframes) · p. 10.26 (Wood Moldings &amp; Trim)</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Read all assigned pages. Complete the guided reading notes — Concept Log covering wall framing, insulation, fireplaces, doors/windows, and millwork, plus Dig Deeper questions.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a 3-paragraph response: how wall assemblies affect energy efficiency; how a fireplace/chimney is constructed safely; how door/window openings are framed.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a one-page infographic on one topic (wall assembly, fireplace, or millwork) with an original diagram.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Reflection Check-In</h4><div class="sub">Formative — complete after Reading &amp; Guided Notes</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Formative — not scored on the tier scale. A checkpoint before moving into hands-on work.</p><ul style="margin:0; padding-left:18px; font-size:13px; color:#333;"><li>What's one thing about wall assemblies you didn't realize before this reading?</li><li>Why do fireplaces have such strict construction requirements?</li><li>What's one millwork detail you'd want in your own house?</li><li>What questions do you still have about how doors and windows get framed?</li></ul></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Vocabulary Application</h4><div class="sub">14 terms — see Vocabulary above</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">14 terms — see Vocabulary above</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the vocabulary form; one full sentence per term.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a real-world example or photo for each term.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a one-page visual reference sheet.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Model Making — Wall Section Cutaway</h4><div class="sub">Provided wall assembly templates</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Provided wall assembly templates</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Build a labeled wall cutaway model showing stud, sheathing, insulation, and siding layers.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a matching hand-drawn wall section at a stated scale.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a small fireplace/chimney detail model or diagram.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Software Exercise — AutoCAD Wall Section</h4><div class="sub">Your Cycle 5–6 drawings</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Your Cycle 5–6 drawings</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Draft a basic wall section showing framing and sheathing.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus add insulation and finish material layers with correct line weights.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus add a door or window opening with correct header framing.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Architectural History — Modernism / Bauhaus Era</h4><div class="sub">Era: Modernism / Bauhaus. Browse architects from this period on Wikipedia: Category: Moder...</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Era: Modernism / Bauhaus. Browse architects from this period on Wikipedia: <a href="https://en.wikipedia.org/wiki/Category:Modernist_architects" target="_blank" rel="noopener">Category: Modernist Architects</a>. Choose one architect to research.</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the architect/era profile template (name, dates, era, signature work, defining fact) using 2+ sources.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a paragraph describing the architect's overall style and their impact on architecture.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same + paragraph, plus a sketch of one signature detail from their work.</div></div></div>
         </div><div class="card quiz-link-card">
@@ -234,12 +251,6 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
         <p style="color:var(--sub); font-size:13px; margin:0;">This cycle's standards (10.7.3, 10.7.4, 10.7.5, 10.7.6, 10.9.1, 10.9.4, 10.9.3) are covered in your <strong>DSA II Study Guide &amp; Practice Exam</strong>.</p>
       </div>
       <a class="quiz-link-btn" href="dsa2.html">Open DSA II &#8599;</a>
-    </div><div class="card quiz-link-card">
-      <div>
-        <p class="section-label" style="margin-bottom:2px;">Project Deliverable</p>
-        <p style="color:var(--sub); font-size:13px; margin:0;"><strong style="color:var(--ink);">Roof Plan</strong> — due this cycle. Includes a Design Critique this cycle. Full details, rubric, and (if applicable) critique questions live on this cycle's Project page.</p>
-      </div>
-      <a class="quiz-link-btn" href="project-7.html" target="_blank" rel="noopener">View Full Details &#8599;</a>
     </div>
   <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
 </div>

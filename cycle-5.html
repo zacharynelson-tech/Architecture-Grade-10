@@ -65,7 +65,8 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
 .assign-left{ min-width:0; }
 .assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
-.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.cls-link{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); border:none; padding:7px 14px; border-radius:9px; text-decoration:none; white-space:nowrap;}
+.cls-link:hover{ background:#1d4fd1; }
 .caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
 .assign-top.open .caret{ transform:rotate(90deg); }
 .assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
@@ -161,6 +162,10 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
 .critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
 .critique-list li:last-child{ margin-bottom:0; }
 .critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
+
+.assign.project-assign{ border-color:#DDD6FE; }
+.project-sq{ width:10px; height:10px; border-radius:2px; background:#7C3AED; display:inline-block; margin-right:8px; flex:none; }
+.project-assign .assign-left h4{ display:flex; align-items:center; }
 </style>
 </head>
 <body>
@@ -184,42 +189,54 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
           <div class="fw-std">10.2 — Architectural Drawing Standards</div>
           <h5>Big Idea(s)</h5><ul><li>Creating a drawing template file will save time and ensure graphical consistency</li></ul>
           <h5>Essential Question(s)</h5><ul><li>How can incomplete or misuse of drawing standards affect a job?</li></ul>
-        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 13 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Pole Foundations</strong><br><span class="desc">How pole foundations work and where they're used.</span></span></li><li><span class="d">Day 2</span><span><strong>Deep Foundations Overview</strong><br><span class="desc">When shallow foundations aren't enough — intro to deep foundation systems.</span></span></li><li><span class="d">Day 3</span><span><strong>Pile Foundations</strong><br><span class="desc">How piles transfer load to deeper, more stable soil layers.</span></span></li><li><span class="d">Day 4</span><span><strong>Practice: Identifying Foundation Systems</strong><br><span class="desc">Guided practice identifying foundation system type from photos and drawings.</span></span></li><li><span class="d">Day 5</span><span><strong>Caisson Foundations</strong><br><span class="desc">Drilled caissons — how they compare to driven piles.</span></span></li><li><span class="d">Day 6</span><span><strong>Foundation Components Review</strong><br><span class="desc">Footing, stem wall, anchor bolt, vapor barrier, rebar — tying it all together.</span></span></li><li><span class="d">Day 7</span><span><strong>Practice: Labeling a Full Foundation Detail</strong><br><span class="desc">Guided practice labeling every component on a complete foundation detail drawing.</span></span></li><li><span class="d">Day 8</span><span><strong>Sheet Graphics & Title Blocks</strong><br><span class="desc">What belongs in a professional title block, and common sheet sizes.</span></span></li><li><span class="d">Day 9</span><span><strong>Practice: Building a Title Block</strong><br><span class="desc">Guided practice setting up a title block template with project name, sheet number, and scale.</span></span></li><li><span class="d">Day 10</span><span><strong>Workshop Day</strong><br><span class="desc">Supervised work day finalizing the Foundation Plan with full component labeling.</span></span></li><li><span class="d">Day 11</span><span><strong>Workshop Day</strong><br><span class="desc">Supervised work day applying the title block template across all sheets completed so far.</span></span></li><li><span class="d">Day 12</span><span><strong>AutoCAD Practice — Title Blocks</strong><br><span class="desc">Build a reusable title block template and apply it to your Foundation Plan.</span></span></li><li><span class="d">Day 13</span><span><strong>Midterm Review</strong><br><span class="desc">Cold-call review of vocabulary and concepts from Cycles 1–5 ahead of the midterm.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">pole foundation</span><span class="chip">pile foundation</span><span class="chip">caisson foundation</span><span class="chip">footing</span><span class="chip">stem wall</span><span class="chip">anchor bolt</span><span class="chip">vapor barrier</span><span class="chip">rebar</span><span class="chip">damp-proofing</span><span class="chip">title block</span><span class="chip">sheet size</span></div></div><p class="section-label">Independent Assignments</p>
-    <p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
+        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 13 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Pole Foundations</strong><br><span class="desc">How pole foundations work and where they're used.</span></span></li><li><span class="d">Day 2</span><span><strong>Deep Foundations Overview</strong><br><span class="desc">When shallow foundations aren't enough — intro to deep foundation systems.</span></span></li><li><span class="d">Day 3</span><span><strong>Pile Foundations</strong><br><span class="desc">How piles transfer load to deeper, more stable soil layers.</span></span></li><li><span class="d">Day 4</span><span><strong>Practice: Identifying Foundation Systems</strong><br><span class="desc">Guided practice identifying foundation system type from photos and drawings.</span></span></li><li><span class="d">Day 5</span><span><strong>Caisson Foundations</strong><br><span class="desc">Drilled caissons — how they compare to driven piles.</span></span></li><li><span class="d">Day 6</span><span><strong>Foundation Components Review</strong><br><span class="desc">Footing, stem wall, anchor bolt, vapor barrier, rebar — tying it all together.</span></span></li><li><span class="d">Day 7</span><span><strong>Practice: Labeling a Full Foundation Detail</strong><br><span class="desc">Guided practice labeling every component on a complete foundation detail drawing.</span></span></li><li><span class="d">Day 8</span><span><strong>Sheet Graphics & Title Blocks</strong><br><span class="desc">What belongs in a professional title block, and common sheet sizes.</span></span></li><li><span class="d">Day 9</span><span><strong>Practice: Building a Title Block</strong><br><span class="desc">Guided practice setting up a title block template with project name, sheet number, and scale.</span></span></li><li><span class="d">Day 10</span><span><strong>Workshop Day</strong><br><span class="desc">Supervised work day finalizing the Foundation Plan with full component labeling.</span></span></li><li><span class="d">Day 11</span><span><strong>Workshop Day</strong><br><span class="desc">Supervised work day applying the title block template across all sheets completed so far.</span></span></li><li><span class="d">Day 12</span><span><strong>AutoCAD Practice — Title Blocks</strong><br><span class="desc">Build a reusable title block template and apply it to your Foundation Plan.</span></span></li><li><span class="d">Day 13</span><span><strong>Midterm Review</strong><br><span class="desc">Cold-call review of vocabulary and concepts from Cycles 1–5 ahead of the midterm.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">pole foundation</span><span class="chip">pile foundation</span><span class="chip">caisson foundation</span><span class="chip">footing</span><span class="chip">stem wall</span><span class="chip">anchor bolt</span><span class="chip">vapor barrier</span><span class="chip">rebar</span><span class="chip">damp-proofing</span><span class="chip">title block</span><span class="chip">sheet size</span></div></div><p class="section-label">Design Project</p>
+    <div class="assign project-assign">
+      <div class="assign-top" onclick="toggleAssign(this)">
+        <div class="assign-left"><h4><span class="project-sq"></span>Floor Framing Plan, Stair Design & Title Block Standard</h4><div class="sub">Due this cycle — includes a Design Critique</div></div>
+        <div class="assign-meta"><span class="caret">&#9656;</span></div>
+      </div>
+      <div class="assign-body">
+        <p class="assign-desc"><strong>Floor Framing Plan, Stair Design & Title Block Standard</strong> — due this cycle. Includes a Design Critique this cycle.</p>
+        <ul style="margin:10px 0 0; padding-left:18px; font-size:13px; color:#333;"><li>Floor Framing Plan</li><li>Code-compliant stair design connecting both floors</li><li>Title block template created and applied to all sheets so far</li></ul>
+        <p style="margin:12px 0 0;"><a class="quiz-link-btn" href="project-5.html" target="_blank" rel="noopener">View Full Details, Rubric &amp; Critique &#8599;</a></p>
+      </div>
+    </div><p class="section-label">Independent Assignments</p>
+    <a class="cls-link" href="https://classroom.google.com/w/ODcxMTY2NjIyNzQw/t/all" target="_blank" rel="noopener" style="display:inline-block; margin-bottom:10px;">Open Google Classroom &#8599;</a>
+    <p style="font-size:12.5px; color:var(--sub); margin:-2px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
     <div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Reading + Guided Notes</h4><div class="sub">Building Construction Illustrated (Ching) — pp. 3.22–3.26 (Pole Foundations, Deep Foundati...</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Building Construction Illustrated (Ching) — pp. 3.22–3.26 (Pole Foundations, Deep Foundations, Pile Foundations, Caisson Foundations)</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Read pp. 3.22–3.26. Complete the guided reading notes.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a 2-paragraph explanation of when a builder would choose a deep foundation over a shallow one.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus research one real building (skyscraper, bridge, or coastal home) that uses piles or caissons and explain why.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Reflection Check-In</h4><div class="sub">Formative — complete after Reading &amp; Guided Notes</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Formative — not scored on the tier scale. A checkpoint before moving into hands-on work.</p><ul style="margin:0; padding-left:18px; font-size:13px; color:#333;"><li>What foundation component do you still mix up with another one?</li><li>Why might a site need piles or caissons instead of a simple spread footing?</li><li>What makes a title block feel “professional” to you?</li><li>What's one thing from Cycles 1–4 you want to review before the midterm?</li></ul></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Vocabulary Application</h4><div class="sub">11 terms — see Vocabulary above</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">11 terms — see Vocabulary above</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the vocabulary form; one full sentence per term.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a real-world example or photo for each term.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a one-page visual reference sheet.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Model Making — Foundation Component Stack</h4><div class="sub">Provided component templates</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Provided component templates</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Build a labeled stack model showing footing, stem wall, and anchor bolt.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus add vapor barrier and rebar to the model.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a matching hand-drawn detail section labeling every component.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Software Exercise — AutoCAD Title Block</h4><div class="sub">Blank sheet template</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Blank sheet template</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Set up a basic title block with project name and sheet number.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus add scale, date, and drawn-by fields.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus save it as a reusable template file and apply it to your Foundation Plan.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Architectural History — Victorian Era</h4><div class="sub">Era: Victorian. Browse architects from this period on Wikipedia: Category: Victorian Archi...</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Era: Victorian. Browse architects from this period on Wikipedia: <a href="https://en.wikipedia.org/wiki/Category:Victorian_architecture" target="_blank" rel="noopener">Category: Victorian Architecture</a>. Choose one architect to research.</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the architect/era profile template (name, dates, era, signature work, defining fact) using 2+ sources.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a paragraph describing the architect's overall style and their impact on architecture.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same + paragraph, plus a sketch of one signature detail from their work.</div></div></div>
         </div><div class="card quiz-link-card">
@@ -234,12 +251,6 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
         <p style="color:var(--sub); font-size:13px; margin:0;">This cycle's standards (10.5.3, 10.2.5) are covered in your <strong>DSA I Study Guide &amp; Practice Exam</strong>.</p>
       </div>
       <a class="quiz-link-btn" href="dsa1.html">Open DSA I &#8599;</a>
-    </div><div class="card quiz-link-card">
-      <div>
-        <p class="section-label" style="margin-bottom:2px;">Project Deliverable</p>
-        <p style="color:var(--sub); font-size:13px; margin:0;"><strong style="color:var(--ink);">Floor Framing Plan, Stair Design & Title Block Standard</strong> — due this cycle. Includes a Design Critique this cycle. Full details, rubric, and (if applicable) critique questions live on this cycle's Project page.</p>
-      </div>
-      <a class="quiz-link-btn" href="project-5.html" target="_blank" rel="noopener">View Full Details &#8599;</a>
     </div>
   <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
 </div>

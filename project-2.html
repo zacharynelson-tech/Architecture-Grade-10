@@ -65,7 +65,8 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
 .assign-left{ min-width:0; }
 .assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
-.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.cls-link{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); border:none; padding:7px 14px; border-radius:9px; text-decoration:none; white-space:nowrap;}
+.cls-link:hover{ background:#1d4fd1; }
 .caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
 .assign-top.open .caret{ transform:rotate(90deg); }
 .assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
@@ -161,6 +162,10 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
 .critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
 .critique-list li:last-child{ margin-bottom:0; }
 .critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
+
+.assign.project-assign{ border-color:#DDD6FE; }
+.project-sq{ width:10px; height:10px; border-radius:2px; background:#7C3AED; display:inline-block; margin-right:8px; flex:none; }
+.project-assign .assign-left h4{ display:flex; align-items:center; }
 </style>
 </head>
 <body>
@@ -177,7 +182,7 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
   <p class="tagline">Full deliverable description, tailored rubric, and (if applicable) critique questions for this cycle. See the Overview page for the fixed house parameters and Final Project Rubric.</p>
   
   <div class="card project-card">
-      <p class="section-label" style="margin-bottom:6px;">Project Deliverable</p>
+      <p class="section-label" style="margin-bottom:6px;">Design Project</p>
       <p style="margin:0 0 8px;"><strong>Diagramming — Bubble Diagrams, Rough Plans & Elevations</strong><br>The design-thinking cycle: test spatial relationships loosely before committing to exact walls, then place the result on the site.</p>
       <ul class="check-list" style="background:#fff; border-radius:10px; padding:10px 14px 10px 30px; margin:10px 0 12px;"><li>Bubble/adjacency diagram testing room relationships</li><li>Rough floor plan sketch — both floors</li><li>Rough elevation sketches — at least front and one side</li><li>Footprint placed and oriented on the shared site</li><li>Scaled, annotated Plot Plan</li></ul>
       <div class="rubric-title">Cycle Check-In Rubric</div><div class="rubric-wrap"><table class="rubric"><tr><th>Category</th><th>Beginning (1)</th><th>Developing (2)</th><th>Proficient (3)</th><th>Exemplary (4)</th></tr><tr><td class="cat">Technical Accuracy</td><td>Bubble diagram is unclear; Plot Plan is missing required elements or drawn at an incorrect scale.</td><td>Mostly correct, with some unclear relationships or minor Plot Plan errors.</td><td>Bubble diagram clearly shows room relationships; Plot Plan is correctly scaled and annotated.</td><td>Diagramming technique and Plot Plan are flawless and precisely executed.</td></tr><tr><td class="cat">Completeness</td><td>Missing multiple required elements (bubble diagram, rough plan, rough elevations, footprint/orientation, Plot Plan).</td><td>Most elements present; at least one is missing or significantly underdeveloped.</td><td>All 5 required elements are present.</td><td>All elements present, plus evidence of exploring more than one option before settling on a direction.</td></tr><tr><td class="cat">Craftsmanship & Presentation</td><td>Sketches and Plot Plan are messy or hard to read.</td><td>Generally neat, with some inconsistency between sketches.</td><td>Clean, legible sketches and a professional Plot Plan.</td><td>Presentation-quality diagramming and Plot Plan.</td></tr><tr><td class="cat">Coordination & Consistency</td><td>Rough plan, elevations, footprint, or Plot Plan contradict the site analysis or program from Cycle 1.</td><td>Mostly consistent, with at least one noticeable conflict against Cycle 1.</td><td>Fully consistent with the site analysis and program established in Cycle 1.</td><td>Fully consistent, with clear evidence the Cycle 1 work directly informed every diagram here.</td></tr><tr><td class="cat">Original Design Development</td><td>Bubble diagram shows only one default room arrangement with no evident exploration.</td><td>Some exploration evident, but the final arrangement feels arbitrary.</td><td>Bubble diagram and orientation decision are clearly justified by real program and site factors.</td><td>Diagramming shows genuine exploration of options, with a well-reasoned final direction.</td></tr></table></div>

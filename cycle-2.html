@@ -65,7 +65,8 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
 .assign-left{ min-width:0; }
 .assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
-.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.cls-link{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); border:none; padding:7px 14px; border-radius:9px; text-decoration:none; white-space:nowrap;}
+.cls-link:hover{ background:#1d4fd1; }
 .caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
 .assign-top.open .caret{ transform:rotate(90deg); }
 .assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
@@ -161,6 +162,10 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
 .critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
 .critique-list li:last-child{ margin-bottom:0; }
 .critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
+
+.assign.project-assign{ border-color:#DDD6FE; }
+.project-sq{ width:10px; height:10px; border-radius:2px; background:#7C3AED; display:inline-block; margin-right:8px; flex:none; }
+.project-assign .assign-left h4{ display:flex; align-items:center; }
 </style>
 </head>
 <body>
@@ -184,42 +189,54 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
           <div class="fw-std">10.2 — Architectural Drawing Standards</div>
           <h5>Big Idea(s)</h5><ul><li>Proper use of architectural drawing standards will reduce communication and construction errors</li></ul>
           <h5>Essential Question(s)</h5><ul><li>Are drawing standards the same for all types of drawings?</li></ul>
-        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 10 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>What Belongs on a Site Plan</strong><br><span class="desc">Walk through the full checklist a site plan must show — boundaries, north arrow, setbacks, utilities, contours. Compare a real site plan against the checklist.</span></span></li><li><span class="d">Day 2</span><span><strong>Reading & Annotating a Site Plan</strong><br><span class="desc">Guided practice identifying and labeling each required item on a sample site plan.</span></span></li><li><span class="d">Day 3</span><span><strong>Legal Descriptions & Boundaries</strong><br><span class="desc">Metes-and-bounds vs. survey plats vs. the rectangular survey system. Read a real legal description together.</span></span></li><li><span class="d">Day 4</span><span><strong>Practice: Interpreting a Boundary Description</strong><br><span class="desc">Guided practice translating a written legal description into a rough boundary sketch.</span></span></li><li><span class="d">Day 5</span><span><strong>Circulation & Access</strong><br><span class="desc">Pedestrian and vehicular circulation, parking requirements. Diagram circulation paths on a sample site.</span></span></li><li><span class="d">Day 6</span><span><strong>Practice: Diagramming Circulation</strong><br><span class="desc">Guided practice laying out a driveway, walkway, and parking area on a provided site.</span></span></li><li><span class="d">Day 7</span><span><strong>Site Orientation Principles</strong><br><span class="desc">Solar orientation, slope, and paving considerations that affect where a footprint sits on a lot.</span></span></li><li><span class="d">Day 8</span><span><strong>Practice: Orienting a Footprint</strong><br><span class="desc">Guided practice placing and rotating a building footprint on the assigned site for solar exposure and access.</span></span></li><li><span class="d">Day 9</span><span><strong>AutoCAD Practice — Annotations</strong><br><span class="desc">Apply dimension lines, a north arrow, and labels to a sample site plan in AutoCAD.</span></span></li><li><span class="d">Day 10</span><span><strong>Workshop / Synthesis Day</strong><br><span class="desc">Supervised work day finalizing the Plot Plan. Preview Cycle 3.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">site plan</span><span class="chip">plot plan</span><span class="chip">easement</span><span class="chip">setback</span><span class="chip">metes-and-bounds</span><span class="chip">legal description</span><span class="chip">survey plat</span><span class="chip">circulation</span><span class="chip">parking ratio</span><span class="chip">bench mark</span><span class="chip">right-of-way</span><span class="chip">annotations</span></div></div><p class="section-label">Independent Assignments</p>
-    <p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
+        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 10 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>What Belongs on a Site Plan</strong><br><span class="desc">Walk through the full checklist a site plan must show — boundaries, north arrow, setbacks, utilities, contours. Compare a real site plan against the checklist.</span></span></li><li><span class="d">Day 2</span><span><strong>Reading & Annotating a Site Plan</strong><br><span class="desc">Guided practice identifying and labeling each required item on a sample site plan.</span></span></li><li><span class="d">Day 3</span><span><strong>Legal Descriptions & Boundaries</strong><br><span class="desc">Metes-and-bounds vs. survey plats vs. the rectangular survey system. Read a real legal description together.</span></span></li><li><span class="d">Day 4</span><span><strong>Practice: Interpreting a Boundary Description</strong><br><span class="desc">Guided practice translating a written legal description into a rough boundary sketch.</span></span></li><li><span class="d">Day 5</span><span><strong>Circulation & Access</strong><br><span class="desc">Pedestrian and vehicular circulation, parking requirements. Diagram circulation paths on a sample site.</span></span></li><li><span class="d">Day 6</span><span><strong>Practice: Diagramming Circulation</strong><br><span class="desc">Guided practice laying out a driveway, walkway, and parking area on a provided site.</span></span></li><li><span class="d">Day 7</span><span><strong>Site Orientation Principles</strong><br><span class="desc">Solar orientation, slope, and paving considerations that affect where a footprint sits on a lot.</span></span></li><li><span class="d">Day 8</span><span><strong>Practice: Orienting a Footprint</strong><br><span class="desc">Guided practice placing and rotating a building footprint on the assigned site for solar exposure and access.</span></span></li><li><span class="d">Day 9</span><span><strong>AutoCAD Practice — Annotations</strong><br><span class="desc">Apply dimension lines, a north arrow, and labels to a sample site plan in AutoCAD.</span></span></li><li><span class="d">Day 10</span><span><strong>Workshop / Synthesis Day</strong><br><span class="desc">Supervised work day finalizing the Plot Plan. Preview Cycle 3.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">site plan</span><span class="chip">plot plan</span><span class="chip">easement</span><span class="chip">setback</span><span class="chip">metes-and-bounds</span><span class="chip">legal description</span><span class="chip">survey plat</span><span class="chip">circulation</span><span class="chip">parking ratio</span><span class="chip">bench mark</span><span class="chip">right-of-way</span><span class="chip">annotations</span></div></div><p class="section-label">Design Project</p>
+    <div class="assign project-assign">
+      <div class="assign-top" onclick="toggleAssign(this)">
+        <div class="assign-left"><h4><span class="project-sq"></span>Diagramming — Bubble Diagrams, Rough Plans & Elevations</h4><div class="sub">Due this cycle</div></div>
+        <div class="assign-meta"><span class="caret">&#9656;</span></div>
+      </div>
+      <div class="assign-body">
+        <p class="assign-desc"><strong>Diagramming — Bubble Diagrams, Rough Plans & Elevations</strong> — due this cycle.</p>
+        <ul style="margin:10px 0 0; padding-left:18px; font-size:13px; color:#333;"><li>Bubble/adjacency diagram testing room relationships</li><li>Rough floor plan sketch — both floors</li><li>Rough elevation sketches — at least front and one side</li><li>Footprint placed and oriented on the shared site</li><li>Scaled, annotated Plot Plan</li></ul>
+        <p style="margin:12px 0 0;"><a class="quiz-link-btn" href="project-2.html" target="_blank" rel="noopener">View Full Details, Rubric &amp; Critique &#8599;</a></p>
+      </div>
+    </div><p class="section-label">Independent Assignments</p>
+    <a class="cls-link" href="https://classroom.google.com/w/ODcxMTY2NjIyNzQw/t/all" target="_blank" rel="noopener" style="display:inline-block; margin-bottom:10px;">Open Google Classroom &#8599;</a>
+    <p style="font-size:12.5px; color:var(--sub); margin:-2px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
     <div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Reading + Guided Notes</h4><div class="sub">Building Construction Illustrated (Ching) — pp. 1.27–1.38 (Pedestrian &amp; Vehicular Circ...</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Building Construction Illustrated (Ching) — pp. 1.27–1.38 (Pedestrian &amp; Vehicular Circulation, Parking, Slope Protection, Retaining Walls, Paving, The Site Plan, Site Description)</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Read pp. 1.27–1.38. Complete the guided reading notes, including the full 20-item site plan checklist.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a 2-paragraph response explaining how a legal description differs from a site plan, and why a site needs both.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus annotate a real site plan (found online or provided) against the 20-item checklist and note anything missing.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Reflection Check-In</h4><div class="sub">Formative — complete after Reading &amp; Guided Notes, before Model Making / Software</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Formative — not scored on the tier scale. A checkpoint before moving into hands-on work.</p><ul style="margin:0; padding-left:18px; font-size:13px; color:#333;"><li>What's one item from the site plan checklist you didn't expect to see there?</li><li>Why might a legal description matter more than a site plan in a property dispute?</li><li>What's one factor that would make you rotate a building's orientation on a site?</li><li>What questions do you still have about circulation or parking requirements?</li></ul></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Vocabulary Application</h4><div class="sub">12 terms — see Vocabulary above</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">12 terms — see Vocabulary above</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the vocabulary form; write one full sentence per term.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a real-world example or photo for each term.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a one-page visual reference sheet for all 12 terms.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Model Making — Site Orientation Study</h4><div class="sub">Uses your Cycle 1 contour model as a base</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Uses your Cycle 1 contour model as a base</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Place a simple block footprint on your contour model in one orientation.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Test 2 different orientations on the same model and note which handles solar exposure/access better.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Test 3 orientations, photograph each, and write a ½-page justification for your final choice.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Software Exercise — AutoCAD Annotations</h4><div class="sub">Provided site plan drawing (AutoCAD)</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Provided site plan drawing (AutoCAD)</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Apply basic annotation elements — dimension lines, a north arrow, and labels — to a provided site plan drawing.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus add elevation tags and section/detail callouts referencing other sheets in the set.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus create a complete annotation legend explaining what each symbol on your drawing means.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Architectural History — Renaissance Era</h4><div class="sub">Era: Renaissance. Browse architects from this period on Wikipedia: Category: Renaissance A...</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Era: Renaissance. Browse architects from this period on Wikipedia: <a href="https://en.wikipedia.org/wiki/Category:Renaissance_architects" target="_blank" rel="noopener">Category: Renaissance Architects</a>. Choose one architect to research.</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the architect/era profile template (name, dates, era, signature work, defining fact) using 2+ sources.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a paragraph describing the architect's overall style and their impact on architecture.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same + paragraph, plus a sketch of one signature detail from their work.</div></div></div>
         </div><div class="card quiz-link-card">
@@ -234,12 +251,6 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
         <p style="color:var(--sub); font-size:13px; margin:0;">This cycle's standards (10.4.4, 10.4.1, 10.2.4) are covered in your <strong>DSA I Study Guide &amp; Practice Exam</strong>.</p>
       </div>
       <a class="quiz-link-btn" href="dsa1.html">Open DSA I &#8599;</a>
-    </div><div class="card quiz-link-card">
-      <div>
-        <p class="section-label" style="margin-bottom:2px;">Project Deliverable</p>
-        <p style="color:var(--sub); font-size:13px; margin:0;"><strong style="color:var(--ink);">Diagramming — Bubble Diagrams, Rough Plans & Elevations</strong> — due this cycle. Full details, rubric, and (if applicable) critique questions live on this cycle's Project page.</p>
-      </div>
-      <a class="quiz-link-btn" href="project-2.html" target="_blank" rel="noopener">View Full Details &#8599;</a>
     </div>
   <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
 </div>

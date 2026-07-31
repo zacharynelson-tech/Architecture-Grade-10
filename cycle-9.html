@@ -65,7 +65,8 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
 .assign-left{ min-width:0; }
 .assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
-.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.cls-link{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); border:none; padding:7px 14px; border-radius:9px; text-decoration:none; white-space:nowrap;}
+.cls-link:hover{ background:#1d4fd1; }
 .caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
 .assign-top.open .caret{ transform:rotate(90deg); }
 .assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
@@ -161,6 +162,10 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
 .critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
 .critique-list li:last-child{ margin-bottom:0; }
 .critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
+
+.assign.project-assign{ border-color:#DDD6FE; }
+.project-sq{ width:10px; height:10px; border-radius:2px; background:#7C3AED; display:inline-block; margin-right:8px; flex:none; }
+.project-assign .assign-left h4{ display:flex; align-items:center; }
 </style>
 </head>
 <body>
@@ -180,30 +185,42 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
           <div class="fw-std">10.11 — Professional Practice in Architecture</div>
           <h5>Big Idea(s)</h5><ul><li>Professional and technical skills are demonstrated through the process and product of hands-on architectural work</li><li>Architectural projects provide opportunities to apply core competencies in real-world settings</li></ul>
           <h5>Essential Question(s)</h5><ul><li>How do professional behaviors and employability skills impact success in Architecture?</li><li>What practices lead to high-quality workmanship?</li></ul>
-        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 11 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Capstone Kickoff — Choosing Your Element</strong><br><span class="desc">Review the 5 element options (stair, deck, doors/windows, millwork, dormer) and choose which to develop in depth.</span></span></li><li><span class="d">Day 2</span><span><strong>Workshop — Base Set Coordination</strong><br><span class="desc">Supervised work day checking that site, foundation, floor, wall, and roof drawings all agree with each other.</span></span></li><li><span class="d">Day 3</span><span><strong>Workshop — Base Set Coordination</strong><br><span class="desc">Continued coordination work — fixing mismatches between sheets.</span></span></li><li><span class="d">Day 4</span><span><strong>Chosen Element — Research & Planning</strong><br><span class="desc">Revisit your chosen element's earlier reading and plan the detail drawing or model you'll produce.</span></span></li><li><span class="d">Day 5</span><span><strong>Workshop — Element Detail Drafting</strong><br><span class="desc">Supervised work day drafting your chosen element's detail drawing.</span></span></li><li><span class="d">Day 6</span><span><strong>Workshop — Element Detail Drafting</strong><br><span class="desc">Continued detail drafting and refinement.</span></span></li><li><span class="d">Day 7</span><span><strong>Workshop — Element Model or Render</strong><br><span class="desc">Supervised work day building a model or 3D render of your chosen element (Advanced tier).</span></span></li><li><span class="d">Day 8</span><span><strong>Peer Review</strong><br><span class="desc">Structured peer review of drawing sets — give and receive feedback on completeness and clarity.</span></span></li><li><span class="d">Day 9</span><span><strong>Workshop — Final Revisions</strong><br><span class="desc">Supervised work day incorporating peer feedback.</span></span></li><li><span class="d">Day 10</span><span><strong>AutoCAD Practice — Drawing Set Coordination</strong><br><span class="desc">Use AutoCAD to check and align your Cycles 1–8 drawings into one coordinated set.</span></span></li><li><span class="d">Day 11</span><span><strong>Workshop / Wrap-Up</strong><br><span class="desc">Final workshop day. Preview Cycle 10 (Review &amp; Portfolio).</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">presentation set</span><span class="chip">detail drawing</span><span class="chip">coordination</span><span class="chip">portfolio</span><span class="chip">peer review</span></div></div><p class="section-label">Independent Assignments</p>
-    <p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
+        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 11 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Capstone Kickoff — Choosing Your Element</strong><br><span class="desc">Review the 5 element options (stair, deck, doors/windows, millwork, dormer) and choose which to develop in depth.</span></span></li><li><span class="d">Day 2</span><span><strong>Workshop — Base Set Coordination</strong><br><span class="desc">Supervised work day checking that site, foundation, floor, wall, and roof drawings all agree with each other.</span></span></li><li><span class="d">Day 3</span><span><strong>Workshop — Base Set Coordination</strong><br><span class="desc">Continued coordination work — fixing mismatches between sheets.</span></span></li><li><span class="d">Day 4</span><span><strong>Chosen Element — Research & Planning</strong><br><span class="desc">Revisit your chosen element's earlier reading and plan the detail drawing or model you'll produce.</span></span></li><li><span class="d">Day 5</span><span><strong>Workshop — Element Detail Drafting</strong><br><span class="desc">Supervised work day drafting your chosen element's detail drawing.</span></span></li><li><span class="d">Day 6</span><span><strong>Workshop — Element Detail Drafting</strong><br><span class="desc">Continued detail drafting and refinement.</span></span></li><li><span class="d">Day 7</span><span><strong>Workshop — Element Model or Render</strong><br><span class="desc">Supervised work day building a model or 3D render of your chosen element (Advanced tier).</span></span></li><li><span class="d">Day 8</span><span><strong>Peer Review</strong><br><span class="desc">Structured peer review of drawing sets — give and receive feedback on completeness and clarity.</span></span></li><li><span class="d">Day 9</span><span><strong>Workshop — Final Revisions</strong><br><span class="desc">Supervised work day incorporating peer feedback.</span></span></li><li><span class="d">Day 10</span><span><strong>AutoCAD Practice — Drawing Set Coordination</strong><br><span class="desc">Use AutoCAD to check and align your Cycles 1–8 drawings into one coordinated set.</span></span></li><li><span class="d">Day 11</span><span><strong>Workshop / Wrap-Up</strong><br><span class="desc">Final workshop day. Preview Cycle 10 (Review &amp; Portfolio).</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">presentation set</span><span class="chip">detail drawing</span><span class="chip">coordination</span><span class="chip">portfolio</span><span class="chip">peer review</span></div></div><p class="section-label">Design Project</p>
+    <div class="assign project-assign">
+      <div class="assign-top" onclick="toggleAssign(this)">
+        <div class="assign-left"><h4><span class="project-sq"></span>Project Deliverable — Coordinated Base Set + Element Deep-Dive</h4><div class="sub">Due this cycle</div></div>
+        <div class="assign-meta"><span class="caret">&#9656;</span></div>
+      </div>
+      <div class="assign-body">
+        <p class="assign-desc"><strong>Project Deliverable — Coordinated Base Set + Element Deep-Dive</strong> — due this cycle.</p>
+        
+        <p style="margin:12px 0 0;"><a class="quiz-link-btn" href="project-9.html" target="_blank" rel="noopener">View Full Details, Rubric &amp; Critique &#8599;</a></p>
+      </div>
+    </div><p class="section-label">Independent Assignments</p>
+    <a class="cls-link" href="https://classroom.google.com/w/ODcxMTY2NjIyNzQw/t/all" target="_blank" rel="noopener" style="display:inline-block; margin-bottom:10px;">Open Google Classroom &#8599;</a>
+    <p style="font-size:12.5px; color:var(--sub); margin:-2px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
     <div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Reflection Check-In</h4><div class="sub">Formative — complete at the start of the cycle</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Formative — not scored on the tier scale. A checkpoint before moving into hands-on work.</p><ul style="margin:0; padding-left:18px; font-size:13px; color:#333;"><li>Which architectural element are you choosing to go deeper on, and why?</li><li>What's one place your drawing set doesn't fully agree with itself yet (a mismatch between sheets)?</li><li>What's the biggest skill you've built so far this year that you're proud of?</li><li>What feedback are you hoping to get from a peer review?</li></ul></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Base Set Coordination</h4><div class="sub">Your completed Cycles 1–8 drawings</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Your completed Cycles 1–8 drawings</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Assemble your site, foundation, floor, wall, and roof drawings into one set with consistent title blocks.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus fix any dimensional or labeling mismatches between sheets.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus add a cover sheet with a sheet index and project description.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Chosen Element — Detail Study</h4><div class="sub">Stair, deck, doors/windows, millwork, or dormer — your choice</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Stair, deck, doors/windows, millwork, or dormer — your choice</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Show your chosen element in plan view within your existing drawings.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a dedicated detail drawing (section or elevation) of the element at proper scale.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus a physical model or rendered 3D view of the element, presentation-ready.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Architectural History — Your Choice</h4><div class="sub">Your choice of era, tied to your capstone element or style. Start browsing on Wikipedia’s ...</div></div>
-            <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
+            <div class="assign-meta"><span class="caret">&#9656;</span></div>
           </div>
           <div class="assign-body"><p class="assign-desc">Your choice of era, tied to your capstone element or style. Start browsing on Wikipedia’s <a href="https://en.wikipedia.org/wiki/List_of_architects" target="_blank" rel="noopener">List of Architects</a> and pick one whose work connects to your chosen element.</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Complete the architect/era profile template (name, dates, era, signature work, defining fact) using 2+ sources.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus a paragraph describing the architect's overall style and their impact on architecture.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same + paragraph, plus a sketch of one signature detail from their work.</div></div></div>
         </div><div class="card quiz-link-card" style="margin-top:20px;">
@@ -212,12 +229,6 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
         <p style="color:var(--sub); font-size:13px; margin:0;">This cycle's standards (Applied) are covered in your <strong>DSA II Study Guide &amp; Practice Exam</strong>.</p>
       </div>
       <a class="quiz-link-btn" href="dsa2.html">Open DSA II &#8599;</a>
-    </div><div class="card quiz-link-card">
-      <div>
-        <p class="section-label" style="margin-bottom:2px;">Project Deliverable</p>
-        <p style="color:var(--sub); font-size:13px; margin:0;"><strong style="color:var(--ink);">Project Deliverable — Coordinated Base Set + Element Deep-Dive</strong> — due this cycle. Full details, rubric, and (if applicable) critique questions live on this cycle's Project page.</p>
-      </div>
-      <a class="quiz-link-btn" href="project-9.html" target="_blank" rel="noopener">View Full Details &#8599;</a>
     </div>
   <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
 </div>

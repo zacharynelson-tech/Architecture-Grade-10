@@ -65,7 +65,8 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
 .assign-left{ min-width:0; }
 .assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
-.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.cls-link{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); border:none; padding:7px 14px; border-radius:9px; text-decoration:none; white-space:nowrap;}
+.cls-link:hover{ background:#1d4fd1; }
 .caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
 .assign-top.open .caret{ transform:rotate(90deg); }
 .assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
@@ -161,6 +162,10 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
 .critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
 .critique-list li:last-child{ margin-bottom:0; }
 .critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
+
+.assign.project-assign{ border-color:#DDD6FE; }
+.project-sq{ width:10px; height:10px; border-radius:2px; background:#7C3AED; display:inline-block; margin-right:8px; flex:none; }
+.project-assign .assign-left h4{ display:flex; align-items:center; }
 </style>
 </head>
 <body>
@@ -177,7 +182,7 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
   <p class="tagline">Full deliverable description, tailored rubric, and (if applicable) critique questions for this cycle. See the Overview page for the fixed house parameters and Final Project Rubric.</p>
   
   <div class="card project-card">
-      <p class="section-label" style="margin-bottom:6px;">Project Deliverable</p>
+      <p class="section-label" style="margin-bottom:6px;">Design Project</p>
       <p style="margin:0 0 8px;"><strong>Roof Plan</strong><br>The roof gets resolved and must integrate cleanly with the elevations and wall section already in place.</p>
       <ul class="check-list" style="background:#fff; border-radius:10px; padding:10px 14px 10px 30px; margin:10px 0 12px;"><li>Roof Plan (ridges, hips, valleys, slope notation)</li></ul>
       <div class="rubric-title">Cycle Check-In Rubric</div><div class="rubric-wrap"><table class="rubric"><tr><th>Category</th><th>Beginning (1)</th><th>Developing (2)</th><th>Proficient (3)</th><th>Exemplary (4)</th></tr><tr><td class="cat">Technical Accuracy</td><td>Roof plan conventions (ridges, hips, valleys, slope notation) contain major errors.</td><td>Mostly correct, with minor notation errors.</td><td>Roof plan correctly follows standard conventions.</td><td>Roof plan is flawless and demonstrates full command of the conventions.</td></tr><tr><td class="cat">Completeness</td><td>Roof plan doesn't resolve over the full footprint, including any additions.</td><td>Mostly resolved, but at least one area is incomplete.</td><td>Roof plan is fully resolved over the entire footprint.</td><td>Roof plan fully resolved, plus additional detail (materials, drainage) beyond the minimum.</td></tr><tr><td class="cat">Craftsmanship & Presentation</td><td>Roof plan is messy or hard to read.</td><td>Generally neat, with some inconsistency in line weights or notation.</td><td>Clean, professional roof plan.</td><td>Presentation-quality roof plan.</td></tr><tr><td class="cat">Coordination & Consistency</td><td>Roof plan doesn't match the rooflines shown in the Cycle 3 elevations or the Cycle 6 wall section.</td><td>Mostly consistent, with at least one mismatch.</td><td>Roof plan is fully consistent with the elevations and wall section.</td><td>Fully consistent, with clear evidence of cross-checking the roof against every other sheet.</td></tr><tr><td class="cat">Original Design Development</td><td>Roof is a generic default with no evident design thinking.</td><td>Some roof detailing present, but not strongly integrated with the rest of the design.</td><td>Roof detailing (and dormer, if used) shows genuine, integrated design thinking.</td><td>Roof design completes a coherent, well-reasoned whole house.</td></tr></table></div>

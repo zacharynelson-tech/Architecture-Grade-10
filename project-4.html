@@ -65,7 +65,8 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .assign-top .sub{ font-size:12px; color:var(--sub); font-weight:400; }
 .assign-left{ min-width:0; }
 .assign-meta{ display:flex; align-items:center; gap:8px; flex:none; }
-.cls-link{ font-size:11.5px; font-weight:600; color:var(--sub); background:transparent; border:1px dashed var(--line); padding:4px 9px; border-radius:7px; text-decoration:none; white-space:nowrap;}
+.cls-link{ font-size:12.5px; font-weight:700; color:#fff; background:var(--accent); border:none; padding:7px 14px; border-radius:9px; text-decoration:none; white-space:nowrap;}
+.cls-link:hover{ background:#1d4fd1; }
 .caret{ color:var(--sub); font-size:12px; transition:transform .15s ease; }
 .assign-top.open .caret{ transform:rotate(90deg); }
 .assign-body{ padding:0 16px 15px; display:none; font-size:13px; }
@@ -161,6 +162,10 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
 .critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
 .critique-list li:last-child{ margin-bottom:0; }
 .critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
+
+.assign.project-assign{ border-color:#DDD6FE; }
+.project-sq{ width:10px; height:10px; border-radius:2px; background:#7C3AED; display:inline-block; margin-right:8px; flex:none; }
+.project-assign .assign-left h4{ display:flex; align-items:center; }
 </style>
 </head>
 <body>
@@ -177,7 +182,7 @@ table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent);
   <p class="tagline">Full deliverable description, tailored rubric, and (if applicable) critique questions for this cycle. See the Overview page for the fixed house parameters and Final Project Rubric.</p>
   
   <div class="card project-card">
-      <p class="section-label" style="margin-bottom:6px;">Project Deliverable</p>
+      <p class="section-label" style="margin-bottom:6px;">Design Project</p>
       <p style="margin:0 0 8px;"><strong>Foundation Type Selected, Foundation Plan & Sheet Index</strong><br>The first Construction Document — now based on your actual resolved floor plan from Cycle 3, not a placeholder footprint.</p>
       <ul class="check-list" style="background:#fff; border-radius:10px; padding:10px 14px 10px 30px; margin:10px 0 12px;"><li>Foundation type chosen and justified in writing</li><li>Foundation Plan with correct hatching and material call-outs</li><li>Sheet Index listing every sheet the final set will contain</li></ul>
       <div class="rubric-title">Cycle Check-In Rubric</div><div class="rubric-wrap"><table class="rubric"><tr><th>Category</th><th>Beginning (1)</th><th>Developing (2)</th><th>Proficient (3)</th><th>Exemplary (4)</th></tr><tr><td class="cat">Technical Accuracy</td><td>Hatch patterns incorrect or missing; sheet index improperly formatted.</td><td>Mostly correct, with some inconsistency in hatching or index formatting.</td><td>Correct hatch patterns applied; sheet index is properly formatted and organized.</td><td>Foundation Plan and sheet index are flawless and precisely executed.</td></tr><tr><td class="cat">Completeness</td><td>Foundation type not selected/justified, Foundation Plan missing elements, or sheet index incomplete.</td><td>Most elements present; at least one is underdeveloped.</td><td>Foundation type is selected and justified, Foundation Plan is complete, and the sheet index lists every sheet.</td><td>All elements complete, plus a thoughtful comparison of alternatives considered before deciding.</td></tr><tr><td class="cat">Craftsmanship & Presentation</td><td>Hatching, labeling, and index are messy or inconsistent.</td><td>Generally neat, with some inconsistency.</td><td>Clean, consistent hatching, labeling, and a well-organized sheet index.</td><td>Presentation-quality documentation.</td></tr><tr><td class="cat">Coordination & Consistency</td><td>Foundation Plan doesn't match the actual floor plan footprint from Cycle 3.</td><td>Mostly consistent, with at least one dimensional mismatch against Cycle 3.</td><td>Foundation Plan matches the Cycle 3 floor plan footprint exactly.</td><td>Fully consistent, with clear evidence of checking foundation dimensions against the resolved floor plan.</td></tr><tr><td class="cat">Original Design Development</td><td>Foundation type chosen arbitrarily, with no connection to site conditions.</td><td>Some reasoning given, but not strongly tied to site conditions from Cycle 1.</td><td>Foundation type is genuinely justified by site conditions (soil, slope, budget considerations).</td><td>Foundation type choice reflects sophisticated reasoning that weighs multiple site factors and trade-offs.</td></tr></table></div>
