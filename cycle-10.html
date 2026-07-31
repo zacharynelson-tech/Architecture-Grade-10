@@ -142,6 +142,25 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .grade-note{ font-size:13px; color:var(--sub); margin:0; }
 
 footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-top:24px; }
+
+.rubric-wrap{ overflow-x:auto; margin-bottom:16px; }
+.rubric-wrap:last-child{ margin-bottom:0; }
+table.rubric{ width:100%; border-collapse:collapse; font-size:11.5px; min-width:640px; }
+table.rubric th{ background:var(--accent); color:#fff; font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; padding:8px 9px; text-align:left; font-weight:700; }
+table.rubric td{ padding:8px 9px; border:1px solid var(--line); vertical-align:top; line-height:1.35; }
+table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent); white-space:nowrap; }
+.rubric-title{ font-family:'Manrope', sans-serif; font-size:14px; font-weight:700; margin:14px 0 8px; color:var(--ink); }
+.rubric-title:first-child{ margin-top:0; }
+
+.critique-card{ border:1.5px solid var(--accent); background:var(--accent-soft); }
+.critique-badge{ display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#fff; background:var(--accent); padding:3px 9px; border-radius:999px; margin-bottom:8px; }
+.critique-format{ display:flex; gap:16px; flex-wrap:wrap; margin:10px 0 12px; }
+.critique-format-item{ font-size:12px; color:var(--sub); }
+.critique-format-item strong{ color:var(--ink); }
+.critique-list{ margin:0; padding-left:18px; background:#fff; border-radius:10px; padding:12px 14px 12px 30px; }
+.critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
+.critique-list li:last-child{ margin-bottom:0; }
+.critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
 </style>
 </head>
 <body>
@@ -161,7 +180,7 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
           <div class="fw-std">10.11 — Professional Practice in Architecture</div>
           <h5>Big Idea(s)</h5><ul><li>Reflection and portfolio documentation are essential for tracking growth and preparing for career opportunities</li></ul>
           <h5>Essential Question(s)</h5><ul><li>Why is documenting work experiences important for career readiness?</li><li>How can reflecting on our work help us improve and prepare for future opportunities?</li></ul>
-        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 6 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Review — Site Through Foundation</strong><br><span class="desc">Cold-call review of Cycles 1–5 vocabulary and concepts.</span></span></li><li><span class="d">Day 2</span><span><strong>Review — Framing Through Roof</strong><br><span class="desc">Cold-call review of Cycles 6–8 vocabulary and concepts.</span></span></li><li><span class="d">Day 3</span><span><strong>Workshop — Portfolio Assembly</strong><br><span class="desc">Supervised work day organizing all drawings into a single exported portfolio file.</span></span></li><li><span class="d">Day 4</span><span><strong>Workshop — Portfolio Polish</strong><br><span class="desc">Supervised work day cleaning up sheet graphics, title blocks, and labeling consistency.</span></span></li><li><span class="d">Day 5</span><span><strong>Workshop — Reflection</strong><br><span class="desc">Guided written reflection on growth across the year, technical and employability skills.</span></span></li><li><span class="d">Day 6</span><span><strong>Final Wrap-Up</strong><br><span class="desc">Final submission of the portfolio-ready drawing set.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">portfolio</span><span class="chip">workmanship</span><span class="chip">competency</span><span class="chip">reflection</span><span class="chip">proficiency</span></div></div><p class="section-label">Independent Assignments</p>
+        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 7 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Review — Site Through Foundation</strong><br><span class="desc">Cold-call review of Cycles 1–5 vocabulary and concepts.</span></span></li><li><span class="d">Day 2</span><span><strong>Review — Framing Through Roof</strong><br><span class="desc">Cold-call review of Cycles 6–8 vocabulary and concepts.</span></span></li><li><span class="d">Day 3</span><span><strong>Workshop — Portfolio Assembly</strong><br><span class="desc">Supervised work day organizing all drawings into a single exported portfolio file.</span></span></li><li><span class="d">Day 4</span><span><strong>Workshop — Portfolio Polish</strong><br><span class="desc">Supervised work day cleaning up sheet graphics, title blocks, and labeling consistency.</span></span></li><li><span class="d">Day 5</span><span><strong>Workshop — Reflection</strong><br><span class="desc">Guided written reflection on growth across the year, technical and employability skills.</span></span></li><li><span class="d">Day 6</span><span><strong>AutoCAD Practice — Portfolio Export</strong><br><span class="desc">Finalize and export your complete AutoCAD drawing set as a polished PDF portfolio.</span></span></li><li><span class="d">Day 7</span><span><strong>Final Wrap-Up</strong><br><span class="desc">Final submission of the portfolio-ready drawing set.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">portfolio</span><span class="chip">workmanship</span><span class="chip">competency</span><span class="chip">reflection</span><span class="chip">proficiency</span></div></div><p class="section-label">Independent Assignments</p>
     <p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
     <div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
@@ -184,7 +203,7 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
         </div><div class="card quiz-link-card">
       <div>
         <p class="section-label" style="margin-bottom:2px;">End of Unit Quiz</p>
-        <p style="color:var(--sub); font-size:13px; margin:0;">10 questions covering this cycle's standards, with an answer key.</p>
+        <p style="color:var(--sub); font-size:13px; margin:0;">10 questions covering this cycle's standards, with an answer key. Not graded — use it to check your own understanding before the DSA.</p>
       </div>
       <a class="quiz-link-btn" href="quizzes.html#cycle-10" target="_blank" rel="noopener">Open Quiz &#8599;</a>
     </div><div class="card quiz-link-card" style="margin-top:20px;">
@@ -193,9 +212,12 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
         <p style="color:var(--sub); font-size:13px; margin:0;">This cycle's standards (Review) are covered in your <strong>DSA II Study Guide &amp; Practice Exam</strong>.</p>
       </div>
       <a class="quiz-link-btn" href="dsa2.html">Open DSA II &#8599;</a>
-    </div><div class="card project-card">
-      <p class="section-label" style="margin-bottom:6px; display:inline;">Project Deliverable</p><span class="placeholder-badge">Placeholder</span>
-      <p style="margin-top:6px;"><strong>Project Deliverable — Final Portfolio-Ready Drawing Set</strong><br>The complete, polished residential drawing set: site plan, foundation plan, floor plans, framing plan, elevations, wall section, roof plan, building section, and your Cycle 9 element deep-dive, all under one consistent title block.</p>
+    </div><div class="card quiz-link-card">
+      <div>
+        <p class="section-label" style="margin-bottom:2px;">Project Deliverable</p>
+        <p style="color:var(--sub); font-size:13px; margin:0;"><strong style="color:var(--ink);">Project Deliverable — Final Portfolio-Ready Drawing Set</strong> — due this cycle. Full details, rubric, and (if applicable) critique questions live on this cycle's Project page.</p>
+      </div>
+      <a class="quiz-link-btn" href="project-10.html" target="_blank" rel="noopener">View Full Details &#8599;</a>
     </div>
   <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
 </div>

@@ -142,6 +142,25 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .grade-note{ font-size:13px; color:var(--sub); margin:0; }
 
 footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-top:24px; }
+
+.rubric-wrap{ overflow-x:auto; margin-bottom:16px; }
+.rubric-wrap:last-child{ margin-bottom:0; }
+table.rubric{ width:100%; border-collapse:collapse; font-size:11.5px; min-width:640px; }
+table.rubric th{ background:var(--accent); color:#fff; font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; padding:8px 9px; text-align:left; font-weight:700; }
+table.rubric td{ padding:8px 9px; border:1px solid var(--line); vertical-align:top; line-height:1.35; }
+table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent); white-space:nowrap; }
+.rubric-title{ font-family:'Manrope', sans-serif; font-size:14px; font-weight:700; margin:14px 0 8px; color:var(--ink); }
+.rubric-title:first-child{ margin-top:0; }
+
+.critique-card{ border:1.5px solid var(--accent); background:var(--accent-soft); }
+.critique-badge{ display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#fff; background:var(--accent); padding:3px 9px; border-radius:999px; margin-bottom:8px; }
+.critique-format{ display:flex; gap:16px; flex-wrap:wrap; margin:10px 0 12px; }
+.critique-format-item{ font-size:12px; color:var(--sub); }
+.critique-format-item strong{ color:var(--ink); }
+.critique-list{ margin:0; padding-left:18px; background:#fff; border-radius:10px; padding:12px 14px 12px 30px; }
+.critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
+.critique-list li:last-child{ margin-bottom:0; }
+.critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
 </style>
 </head>
 <body>
@@ -165,7 +184,7 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
           <div class="fw-std">10.2 — Architectural Drawing Standards</div>
           <h5>Big Idea(s)</h5><ul><li>It is necessary to understand and be able to properly use architectural drawing standards</li><li>Proper use of architectural drawing standards will reduce communication and construction errors</li></ul>
           <h5>Essential Question(s)</h5><ul><li>How can incomplete or misuse of drawing standards affect a job?</li><li>Are drawing standards the same for all types of drawings?</li></ul>
-        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 7 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Introduction to Site Analysis</strong><br><span class="desc">What goes into a site analysis (property lines, features, vegetation, utilities, soil, sun/wind) and why it happens before design begins. Live GIS/Google Earth walkthrough of a real site.</span></span></li><li><span class="d">Day 2</span><span><strong>Site Diagramming Techniques</strong><br><span class="desc">Graphic techniques for documenting sun path, wind, noise, views, access. Demonstrate diagramming 3–4 factors on a sample plan; guided class practice.</span></span></li><li><span class="d">Day 3</span><span><strong>Intro to Topography & Contour Lines</strong><br><span class="desc">What a contour line represents, contour intervals, spacing = slope. Read a real topo map together; quick steep-vs-gradual visual check.</span></span></li><li><span class="d">Day 4</span><span><strong>From Contours to Physical Form</strong><br><span class="desc">How stacked contour layers become a 3D model of the land. Build the first layers of a sample model live; students start cutting their own first layer.</span></span></li><li><span class="d">Day 5</span><span><strong>The Alphabet of Lines</strong><br><span class="desc">The 7 standard line types and weights — construction, hidden, phantom, center, object, section, border. Draw all 7 on the board; matching practice on a sample drawing.</span></span></li><li><span class="d">Day 6</span><span><strong>Common Drawing Scales</strong><br><span class="desc">Reading and applying an architect's scale (builds on 9.1.1). Convert one dimension into 3 common scales; guided practice conversions.</span></span></li><li><span class="d">Day 7</span><span><strong>Workshop / Synthesis Day</strong><br><span class="desc">Supervised work day — check in on contour models, Acrobat markups, vocab. Cold-call recap of key vocab + site plan vs. plot plan. Preview Cycle 2.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">site plan</span><span class="chip">plot plan</span><span class="chip">site analysis</span><span class="chip">site diagramming</span><span class="chip">topography</span><span class="chip">contours</span><span class="chip">contour elevation</span><span class="chip">contour profile</span><span class="chip">GIS</span><span class="chip">setbacks</span><span class="chip">utilities</span><span class="chip">soil types</span></div></div><p class="section-label">Independent Assignments</p>
+        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 8 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Introduction to Site Analysis</strong><br><span class="desc">What goes into a site analysis (property lines, features, vegetation, utilities, soil, sun/wind) and why it happens before design begins. Live GIS/Google Earth walkthrough of a real site.</span></span></li><li><span class="d">Day 2</span><span><strong>Site Diagramming Techniques</strong><br><span class="desc">Graphic techniques for documenting sun path, wind, noise, views, access. Demonstrate diagramming 3–4 factors on a sample plan; guided class practice.</span></span></li><li><span class="d">Day 3</span><span><strong>Intro to Topography & Contour Lines</strong><br><span class="desc">What a contour line represents, contour intervals, spacing = slope. Read a real topo map together; quick steep-vs-gradual visual check.</span></span></li><li><span class="d">Day 4</span><span><strong>From Contours to Physical Form</strong><br><span class="desc">How stacked contour layers become a 3D model of the land. Build the first layers of a sample model live; students start cutting their own first layer.</span></span></li><li><span class="d">Day 5</span><span><strong>The Alphabet of Lines</strong><br><span class="desc">The 7 standard line types and weights — construction, hidden, phantom, center, object, section, border. Draw all 7 on the board; matching practice on a sample drawing.</span></span></li><li><span class="d">Day 6</span><span><strong>Common Drawing Scales</strong><br><span class="desc">Reading and applying an architect's scale (builds on 9.1.1). Convert one dimension into 3 common scales; guided practice conversions.</span></span></li><li><span class="d">Day 7</span><span><strong>AutoCAD Practice — CAD Packet Shapes</strong><br><span class="desc">Work through the CAD Practice Packet in AutoCAD, building toward all three levels: shape geometry, dimensioning, and a paper space layout.</span></span></li><li><span class="d">Day 8</span><span><strong>Workshop / Synthesis Day</strong><br><span class="desc">Supervised work day — check in on contour models, Acrobat markups, vocab. Cold-call recap of key vocab + site plan vs. plot plan. Preview Cycle 2.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">site plan</span><span class="chip">plot plan</span><span class="chip">site analysis</span><span class="chip">site diagramming</span><span class="chip">topography</span><span class="chip">contours</span><span class="chip">contour elevation</span><span class="chip">contour profile</span><span class="chip">GIS</span><span class="chip">setbacks</span><span class="chip">utilities</span><span class="chip">soil types</span></div></div><p class="section-label">Independent Assignments</p>
     <p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
     <div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
@@ -193,10 +212,10 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
           <div class="assign-body"><p class="assign-desc">Provided contour-line site data</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Build a stacked-layer contour model (cardboard/foam board) matching the provided data, cut and assembled accurately.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same model with layers labeled by elevation, plus a matching hand-drawn contour plan (top view) at a stated scale.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same model + labeled elevations + contour plan, plus a ½-page written site-placement recommendation referencing at least 2 topographic features.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
-            <div class="assign-left"><h4>Software Exercise — Intro to AutoCAD</h4><div class="sub">Provided shape packet (coordinate-based placement exercise)</div></div>
+            <div class="assign-left"><h4>Software Exercise — Intro to AutoCAD</h4><div class="sub">CAD Practice Packet (10 dimensioned shapes, provided) — same 10 shapes carried across all ...</div></div>
             <div class="assign-meta"><span class="cls-link">+ Add Link</span><span class="caret">&#9656;</span></div>
           </div>
-          <div class="assign-body"><p class="assign-desc">Provided shape packet (coordinate-based placement exercise)</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Using the provided shape packet, enter the given coordinates to accurately place each shape in AutoCAD. Along the way, identify the basic interface elements: command line, ribbon/toolbar, drawing area, and coordinate display.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same, plus organize the shapes onto separate, correctly named layers based on shape type.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same, plus add dimension annotations labeling at least 3 of the shapes' key measurements.</div></div></div>
+          <div class="assign-body"><p class="assign-desc">CAD Practice Packet (10 dimensioned shapes, provided) — same 10 shapes carried across all three tiers, each tier adding scope</p><div class="tier-row"><div class="tier-badge min">Min &middot; up to 70</div><div>Recreate all 10 shapes from the CAD Practice Packet in AutoCAD model space, matching each outline's geometry exactly using the appropriate draw commands (Line, Circle, Arc, Fillet, Array, etc.). Along the way, identify the basic interface elements: command line, ribbon/toolbar, drawing area, and coordinate display.</div></div><div class="tier-row"><div class="tier-badge prof">Prof &middot; up to 85</div><div>Same 10 shapes, plus add every dimension shown in the packet to each one — linear, angular, diameter, and radius call-outs — matching the packet's annotation style.</div></div><div class="tier-row"><div class="tier-badge adv">Adv &middot; up to 100</div><div>Same 10 fully dimensioned shapes, plus organize all of them onto a single paper space sheet layout with appropriate viewports, consistent scale, and a title block.</div></div></div>
         </div><div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
             <div class="assign-left"><h4>Architectural History — Ancient / Classical Era</h4><div class="sub">Era: Ancient / Classical (Greek &amp; Roman). Browse architects from this period on Wikipe...</div></div>
@@ -206,7 +225,7 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
         </div><div class="card quiz-link-card">
       <div>
         <p class="section-label" style="margin-bottom:2px;">End of Unit Quiz</p>
-        <p style="color:var(--sub); font-size:13px; margin:0;">10 questions covering this cycle's standards, with an answer key.</p>
+        <p style="color:var(--sub); font-size:13px; margin:0;">10 questions covering this cycle's standards, with an answer key. Not graded — use it to check your own understanding before the DSA.</p>
       </div>
       <a class="quiz-link-btn" href="quizzes.html#cycle-1" target="_blank" rel="noopener">Open Quiz &#8599;</a>
     </div><div class="card quiz-link-card" style="margin-top:20px;">
@@ -215,9 +234,12 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
         <p style="color:var(--sub); font-size:13px; margin:0;">This cycle's standards (10.4.2, 10.4.3, 10.2.1, 10.2.2) are covered in your <strong>DSA I Study Guide &amp; Practice Exam</strong>.</p>
       </div>
       <a class="quiz-link-btn" href="dsa1.html">Open DSA I &#8599;</a>
-    </div><div class="card project-card">
-      <p class="section-label" style="margin-bottom:6px; display:inline;">Project Deliverable</p><span class="placeholder-badge">Placeholder</span>
-      <p style="margin-top:6px;"><strong>Project Deliverable — Site Analysis Diagram + Contour Study</strong><br>Same shared lot for every student. Establishes the site — no design decisions yet, but every future cycle traces back to this analysis and the contour study built in Model Making above.</p>
+    </div><div class="card quiz-link-card">
+      <div>
+        <p class="section-label" style="margin-bottom:2px;">Project Deliverable</p>
+        <p style="color:var(--sub); font-size:13px; margin:0;"><strong style="color:var(--ink);">Program Documentation, Site Analysis Diagram & Contour Study</strong> — due this cycle. Full details, rubric, and (if applicable) critique questions live on this cycle's Project page.</p>
+      </div>
+      <a class="quiz-link-btn" href="project-1.html" target="_blank" rel="noopener">View Full Details &#8599;</a>
     </div>
   <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
 </div>

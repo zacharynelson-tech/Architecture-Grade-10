@@ -142,6 +142,25 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .grade-note{ font-size:13px; color:var(--sub); margin:0; }
 
 footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-top:24px; }
+
+.rubric-wrap{ overflow-x:auto; margin-bottom:16px; }
+.rubric-wrap:last-child{ margin-bottom:0; }
+table.rubric{ width:100%; border-collapse:collapse; font-size:11.5px; min-width:640px; }
+table.rubric th{ background:var(--accent); color:#fff; font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; padding:8px 9px; text-align:left; font-weight:700; }
+table.rubric td{ padding:8px 9px; border:1px solid var(--line); vertical-align:top; line-height:1.35; }
+table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent); white-space:nowrap; }
+.rubric-title{ font-family:'Manrope', sans-serif; font-size:14px; font-weight:700; margin:14px 0 8px; color:var(--ink); }
+.rubric-title:first-child{ margin-top:0; }
+
+.critique-card{ border:1.5px solid var(--accent); background:var(--accent-soft); }
+.critique-badge{ display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#fff; background:var(--accent); padding:3px 9px; border-radius:999px; margin-bottom:8px; }
+.critique-format{ display:flex; gap:16px; flex-wrap:wrap; margin:10px 0 12px; }
+.critique-format-item{ font-size:12px; color:var(--sub); }
+.critique-format-item strong{ color:var(--ink); }
+.critique-list{ margin:0; padding-left:18px; background:#fff; border-radius:10px; padding:12px 14px 12px 30px; }
+.critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
+.critique-list li:last-child{ margin-bottom:0; }
+.critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
 </style>
 </head>
 <body>
@@ -155,18 +174,44 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
     <a class="pill text" href="https://gemini.google.com/gem/1DFNilTS6_fcmb-rIukUi0wobas5WpxJC?usp=sharing" target="_blank" rel="noopener" style="color:#fff; font-weight:700; background:var(--good); padding:4px 12px; border-radius:999px;">&#127963;&#65039; Ask Vitruvius</a>
   </div>
   <h1 class="pagetitle">“My First House”</h1>
-  <p class="tagline">Every student designs a 2-story, 1,400–2,000 sf residence (min. 3BR/2BA) on the same assigned lot. Site and constraints are controlled so students are assessed on site response and technical execution, not lot difficulty.</p>
-  <div class="tags"><span class="tag">2-Story</span><span class="tag">Shared Site</span></div>
+  <p class="tagline">A 2-story Colonial residence, same site and program for every student — built one drawing at a time, cycle by cycle.</p>
+  <div class="tags"><span class="tag">2-Story Colonial</span><span class="tag">Shared Site</span></div>
   
-<div class="placeholder-banner">&#128679; <strong>Placeholder — in development.</strong> The project details below are a draft. This will be revisited and finalized later; treat everything on this page as subject to change.</div>
 <div class="ref-section">
-  <h3>Style Choices</h3>
-  <div class="chip-row"><div class="chip">Colonial</div><div class="chip">Craftsman</div><div class="chip">Contemporary</div><div class="chip">Farmhouse</div></div>
+  <h3>What You're Designing</h3>
+  <p style="font-size:13.5px; color:#333; margin:0 0 14px;">Every student designs a 2-story Colonial residence on the same assigned site. The parameters below are fixed for everyone — they exist so the whole class can focus on applying the same drafting and construction standards to the same problem. Your originality shows up in the decisions you make within those parameters, not in changing the parameters themselves.</p>
+  <div class="fw-cols">
+    <div>
+      <h5 style="color:var(--accent);">Fixed for Everyone</h5>
+      <ul>
+        <li>Site: the same lot and contour data every student is using.</li>
+        <li>Style: 2-story Colonial — symmetrical facade, center entry, gable roof.</li>
+        <li>Footprint: a simple rectangle (or a rectangle plus one straightforward addition) — minimize jogs, offsets, and non-90° corners.</li>
+        <li>Room Program: Kitchen, Living Room, Dining Room, and a Half Bath on the first floor; 3 Bedrooms and 2 Full Baths on the second floor.</li>
+      </ul>
+    </div>
+    <div>
+      <h5 style="color:var(--good);">Yours to Decide</h5>
+      <ul>
+        <li>Foundation type (Cycle 3) — chosen and justified based on your Cycle 1 site analysis.</li>
+        <li>Site orientation (Cycle 2) — based on sun path, access, and site factors identified.</li>
+        <li>Original design development — push the design further and make it your own (an addition, a specific detail, another idea). What matters is that the decision is genuine, justified, and carried correctly through every drawing that follows.</li>
+      </ul>
+    </div>
+  </div>
 </div>
+
 <div class="ref-section">
   <h3>Deliverable Map — Cycles 1–8</h3>
-  <table style="width:100%; border-collapse:collapse;"><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">1</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Site Analysis Diagram + Contour Study</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">2</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Style selection · footprint/orientation on lot · Plot Plan</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">3</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Foundation type selected · preliminary Foundation Plan</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">4</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Foundation Plan refined · Sheet Index created (both floors)</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">5</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Foundation Plan finalized · standard title block set</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">6</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Floor Plan(s) — both floors · Floor Framing Plan · required stair connecting floors</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">7</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Exterior Elevations (all 4 sides, 2-story + style) · Wall Section</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">8</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Roof Plan · Building Section (full 2-story cut, foundation to ridge)</td></tr></table>
+  <table style="width:100%; border-collapse:collapse;"><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">1</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Program Documentation, Site Analysis Diagram & Contour Study</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">2</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Diagramming — Bubble Diagrams, Rough Plans & Elevations</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">3</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Fully Developed Floor Plans & Elevations</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">4</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Foundation Type Selected, Foundation Plan & Sheet Index</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">5</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Floor Framing Plan, Stair Design & Title Block Standard</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">6</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Wall Section</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">7</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Roof Plan</td></tr><tr><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">8</td><td style="padding:8px; border-bottom:1px solid var(--line); font-size:13px;">Building Section & Final Coordination</td></tr></table>
 </div>
+
+<div class="ref-section">
+  <h3>How You'll Be Assessed</h3>
+  <p style="font-size:13.5px; color:#333; margin:0 0 10px;">Each cycle's Project Deliverable is checked with a tailored Cycle Check-In Rubric (on that cycle's own page) — quick, formative feedback scoped to that cycle's specific piece. At the end of Cycle 8, your complete drawing set is scored once against the Final Project Rubric below, which asks the same 5 questions about the whole finished set.</p>
+  <div class="rubric-wrap"><table class="rubric"><tr><th>Category</th><th>Beginning (1)</th><th>Developing (2)</th><th>Proficient (3)</th><th>Exemplary (4)</th></tr><tr><td class="cat">Technical Accuracy</td><td>Frequent errors across multiple sheets in line weights, scale, dimensioning, or code compliance.</td><td>Generally correct, but noticeable errors on more than one sheet.</td><td>Drafting standards correctly and consistently applied across the entire set.</td><td>Consistently precise and code-compliant across every sheet — professional quality throughout.</td></tr><tr><td class="cat">Completeness</td><td>Multiple required sheets are missing (site plan, floor plans, elevations, building section, wall section, framing plans).</td><td>Most required sheets are present; at least one is missing or significantly incomplete.</td><td>All required sheets are present and complete.</td><td>All required sheets present, plus additional supporting detail (schedules, extra details, etc.) that enhances the set.</td></tr><tr><td class="cat">Craftsmanship & Presentation</td><td>Inconsistent quality across sheets; unprofessional in multiple places.</td><td>Generally clean, but noticeable inconsistency in quality between sheets.</td><td>Consistent, professional-quality presentation across the whole set.</td><td>Portfolio-ready — the set could be presented to a client or employer as-is.</td></tr><tr><td class="cat">Coordination & Consistency</td><td>Sheets contradict each other (e.g., the floor plan doesn't match the framing plan or elevations).</td><td>Mostly consistent, with at least one noticeable conflict between sheets.</td><td>All sheets fully agree with each other throughout the set.</td><td>Fully coordinated, with clear evidence the student cross-checked sheets against each other.</td></tr><tr><td class="cat">Original Design Development</td><td>The house reads as a generic default with no evidence of the student's own design thinking.</td><td>Some original decisions are present, but not clearly justified or integrated.</td><td>Clear, well-justified original design decisions that respond to the site and program.</td><td>The design reads as a coherent, intentional whole — original decisions are well-integrated and clearly reasoned throughout.</td></tr></table></div>
+</div>
+
 <div class="card project-card">
   <p class="section-label" style="margin-bottom:6px;">Looking Ahead</p>
   <p style="margin-bottom:10px;"><strong>Cycle 9 — Capstone Build:</strong> no new content standards; students choose one architectural element to detail in depth on top of their completed base set.</p>

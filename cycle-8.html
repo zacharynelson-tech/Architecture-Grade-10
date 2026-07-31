@@ -142,6 +142,25 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .grade-note{ font-size:13px; color:var(--sub); margin:0; }
 
 footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-top:24px; }
+
+.rubric-wrap{ overflow-x:auto; margin-bottom:16px; }
+.rubric-wrap:last-child{ margin-bottom:0; }
+table.rubric{ width:100%; border-collapse:collapse; font-size:11.5px; min-width:640px; }
+table.rubric th{ background:var(--accent); color:#fff; font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; padding:8px 9px; text-align:left; font-weight:700; }
+table.rubric td{ padding:8px 9px; border:1px solid var(--line); vertical-align:top; line-height:1.35; }
+table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent); white-space:nowrap; }
+.rubric-title{ font-family:'Manrope', sans-serif; font-size:14px; font-weight:700; margin:14px 0 8px; color:var(--ink); }
+.rubric-title:first-child{ margin-top:0; }
+
+.critique-card{ border:1.5px solid var(--accent); background:var(--accent-soft); }
+.critique-badge{ display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#fff; background:var(--accent); padding:3px 9px; border-radius:999px; margin-bottom:8px; }
+.critique-format{ display:flex; gap:16px; flex-wrap:wrap; margin:10px 0 12px; }
+.critique-format-item{ font-size:12px; color:var(--sub); }
+.critique-format-item strong{ color:var(--ink); }
+.critique-list{ margin:0; padding-left:18px; background:#fff; border-radius:10px; padding:12px 14px 12px 30px; }
+.critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
+.critique-list li:last-child{ margin-bottom:0; }
+.critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
 </style>
 </head>
 <body>
@@ -165,7 +184,7 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
           <div class="fw-std">10.9 — Architectural Elements</div>
           <h5>Big Idea(s)</h5><ul><li>Integration of architectural elements will have a positive impact on your overall project</li></ul>
           <h5>Essential Question(s)</h5><ul><li>How can architects use finishes to enhance the aesthetics of a home?</li></ul>
-        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 10 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Rafter Framing Basics</strong><br><span class="desc">How rafters span from ridge to eave, and how roof slope is described.</span></span></li><li><span class="d">Day 2</span><span><strong>Roof Sheathing & Wood Trusses</strong><br><span class="desc">Sheathing over rafters vs. prefabricated wood trusses.</span></span></li><li><span class="d">Day 3</span><span><strong>Practice: Framing Plan for a Simple Roof</strong><br><span class="desc">Guided practice sketching a basic rafter layout for a gable roof.</span></span></li><li><span class="d">Day 4</span><span><strong>Roofing Materials — Shingles</strong><br><span class="desc">Wood shingles/shakes, composition shingles, slate, and tile compared.</span></span></li><li><span class="d">Day 5</span><span><strong>Roofing Materials — Membranes & Metal</strong><br><span class="desc">Flat roof assemblies, built-up roofing, single-ply, sheet metal.</span></span></li><li><span class="d">Day 6</span><span><strong>Practice: Choosing Roofing Material</strong><br><span class="desc">Guided practice matching a roofing material to a given roof slope and style.</span></span></li><li><span class="d">Day 7</span><span><strong>Roof Drainage</strong><br><span class="desc">Gutters, downspouts, and how a roof sheds water correctly.</span></span></li><li><span class="d">Day 8</span><span><strong>Dormers & Roof Massing</strong><br><span class="desc">How a dormer changes roof massing and adds usable space — sustainability teaser: solar/green roofing options.</span></span></li><li><span class="d">Day 9</span><span><strong>Practice: Adding a Dormer</strong><br><span class="desc">Guided practice sketching a dormer onto a roof plan and checking its proportions against the style.</span></span></li><li><span class="d">Day 10</span><span><strong>Workshop / Synthesis Day</strong><br><span class="desc">Supervised work day finalizing the Roof Plan and Building Section. Preview Cycle 9.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">rafter</span><span class="chip">ridge board</span><span class="chip">collar tie</span><span class="chip">eave</span><span class="chip">soffit</span><span class="chip">fascia</span><span class="chip">truss</span><span class="chip">underlayment</span><span class="chip">shingle</span><span class="chip">membrane roofing</span><span class="chip">gutter</span><span class="chip">downspout</span><span class="chip">dormer</span><span class="chip">green roof</span></div></div><p class="section-label">Independent Assignments</p>
+        </div></div></div><div class="ref-section"><h3>Lesson Outline &middot; 11 Days</h3><ul class="lesson-list"><li><span class="d">Day 1</span><span><strong>Rafter Framing Basics</strong><br><span class="desc">How rafters span from ridge to eave, and how roof slope is described.</span></span></li><li><span class="d">Day 2</span><span><strong>Roof Sheathing & Wood Trusses</strong><br><span class="desc">Sheathing over rafters vs. prefabricated wood trusses.</span></span></li><li><span class="d">Day 3</span><span><strong>Practice: Framing Plan for a Simple Roof</strong><br><span class="desc">Guided practice sketching a basic rafter layout for a gable roof.</span></span></li><li><span class="d">Day 4</span><span><strong>Roofing Materials — Shingles</strong><br><span class="desc">Wood shingles/shakes, composition shingles, slate, and tile compared.</span></span></li><li><span class="d">Day 5</span><span><strong>Roofing Materials — Membranes & Metal</strong><br><span class="desc">Flat roof assemblies, built-up roofing, single-ply, sheet metal.</span></span></li><li><span class="d">Day 6</span><span><strong>Practice: Choosing Roofing Material</strong><br><span class="desc">Guided practice matching a roofing material to a given roof slope and style.</span></span></li><li><span class="d">Day 7</span><span><strong>Roof Drainage</strong><br><span class="desc">Gutters, downspouts, and how a roof sheds water correctly.</span></span></li><li><span class="d">Day 8</span><span><strong>Dormers & Roof Massing</strong><br><span class="desc">How a dormer changes roof massing and adds usable space — sustainability teaser: solar/green roofing options.</span></span></li><li><span class="d">Day 9</span><span><strong>Practice: Adding a Dormer</strong><br><span class="desc">Guided practice sketching a dormer onto a roof plan and checking its proportions against the style.</span></span></li><li><span class="d">Day 10</span><span><strong>AutoCAD Practice — Roof Plan</strong><br><span class="desc">Draft a roof plan showing ridges, hips, valleys, and slope notation.</span></span></li><li><span class="d">Day 11</span><span><strong>Workshop / Synthesis Day</strong><br><span class="desc">Supervised work day finalizing the Roof Plan and Building Section. Preview Cycle 9.</span></span></li></ul><p style="font-size:12px; color:var(--sub); font-style:italic; margin:12px 0 0;">This is a rough outline and is subject to change.</p></div><div class="ref-section"><h3>Vocabulary</h3><div class="chip-row"><span class="chip">rafter</span><span class="chip">ridge board</span><span class="chip">collar tie</span><span class="chip">eave</span><span class="chip">soffit</span><span class="chip">fascia</span><span class="chip">truss</span><span class="chip">underlayment</span><span class="chip">shingle</span><span class="chip">membrane roofing</span><span class="chip">gutter</span><span class="chip">downspout</span><span class="chip">dormer</span><span class="chip">green roof</span></div></div><p class="section-label">Independent Assignments</p>
     <p style="font-size:12.5px; color:var(--sub); margin:-6px 0 14px;">Each tier sets your ceiling for that task, not a guaranteed score — quality of execution still determines your grade within it.</p>
     <div class="assign">
           <div class="assign-top" onclick="toggleAssign(this)">
@@ -206,7 +225,7 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
         </div><div class="card quiz-link-card">
       <div>
         <p class="section-label" style="margin-bottom:2px;">End of Unit Quiz</p>
-        <p style="color:var(--sub); font-size:13px; margin:0;">10 questions covering this cycle's standards, with an answer key.</p>
+        <p style="color:var(--sub); font-size:13px; margin:0;">10 questions covering this cycle's standards, with an answer key. Not graded — use it to check your own understanding before the DSA.</p>
       </div>
       <a class="quiz-link-btn" href="quizzes.html#cycle-8" target="_blank" rel="noopener">Open Quiz &#8599;</a>
     </div><div class="card quiz-link-card" style="margin-top:20px;">
@@ -215,9 +234,12 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
         <p style="color:var(--sub); font-size:13px; margin:0;">This cycle's standards (10.8.1, 10.8.2, 10.8.3, 10.8.4, 10.8.5, 10.9.8, 10.9.5) are covered in your <strong>DSA II Study Guide &amp; Practice Exam</strong>.</p>
       </div>
       <a class="quiz-link-btn" href="dsa2.html">Open DSA II &#8599;</a>
-    </div><div class="card project-card">
-      <p class="section-label" style="margin-bottom:6px; display:inline;">Project Deliverable</p><span class="placeholder-badge">Placeholder</span>
-      <p style="margin-top:6px;"><strong>Project Deliverable — Roof Plan, Building Section</strong><br>Produce a Roof Plan reflecting your chosen style and a full Building Section cutting through the entire 2-story house, foundation to ridge. This completes your base drawing set.</p>
+    </div><div class="card quiz-link-card">
+      <div>
+        <p class="section-label" style="margin-bottom:2px;">Project Deliverable</p>
+        <p style="color:var(--sub); font-size:13px; margin:0;"><strong style="color:var(--ink);">Building Section & Final Coordination</strong> — due this cycle. Full details, rubric, and (if applicable) critique questions live on this cycle's Project page.</p>
+      </div>
+      <a class="quiz-link-btn" href="project-8.html" target="_blank" rel="noopener">View Full Details &#8599;</a>
     </div>
   <footer class="pagefoot">CTECS Architecture &middot; Grade 10</footer>
 </div>

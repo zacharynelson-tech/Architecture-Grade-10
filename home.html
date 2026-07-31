@@ -142,6 +142,25 @@ h1.pagetitle{ font-family:'Manrope', sans-serif; font-weight:800; font-size:30px
 .grade-note{ font-size:13px; color:var(--sub); margin:0; }
 
 footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-top:24px; }
+
+.rubric-wrap{ overflow-x:auto; margin-bottom:16px; }
+.rubric-wrap:last-child{ margin-bottom:0; }
+table.rubric{ width:100%; border-collapse:collapse; font-size:11.5px; min-width:640px; }
+table.rubric th{ background:var(--accent); color:#fff; font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; padding:8px 9px; text-align:left; font-weight:700; }
+table.rubric td{ padding:8px 9px; border:1px solid var(--line); vertical-align:top; line-height:1.35; }
+table.rubric td.cat{ background:var(--bg); font-weight:700; color:var(--accent); white-space:nowrap; }
+.rubric-title{ font-family:'Manrope', sans-serif; font-size:14px; font-weight:700; margin:14px 0 8px; color:var(--ink); }
+.rubric-title:first-child{ margin-top:0; }
+
+.critique-card{ border:1.5px solid var(--accent); background:var(--accent-soft); }
+.critique-badge{ display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:#fff; background:var(--accent); padding:3px 9px; border-radius:999px; margin-bottom:8px; }
+.critique-format{ display:flex; gap:16px; flex-wrap:wrap; margin:10px 0 12px; }
+.critique-format-item{ font-size:12px; color:var(--sub); }
+.critique-format-item strong{ color:var(--ink); }
+.critique-list{ margin:0; padding-left:18px; background:#fff; border-radius:10px; padding:12px 14px 12px 30px; }
+.critique-list li{ font-size:13px; color:#333; margin-bottom:7px; }
+.critique-list li:last-child{ margin-bottom:0; }
+.critique-grade-note{ font-size:12px; color:var(--sub); margin-top:10px; }
 </style>
 </head>
 <body>
@@ -174,13 +193,18 @@ footer.pagefoot{ text-align:center; font-size:11.5px; color:var(--sub); margin-t
     <div class="tier-legend-item prof"><div class="name">Proficiency</div><div class="pts">Up to 85</div><p>Core task plus deeper analysis or connection.</p></div>
     <div class="tier-legend-item adv"><div class="name">Advanced</div><div class="pts">Up to 100</div><p>Full depth — presentation-ready, extra synthesis.</p></div>
   </div>
-  <p class="grade-note"><strong>The tier you choose sets your ceiling for that task — not your score.</strong> Attempting Advanced work means 100 is possible, not automatic; it's still graded on how well you execute it. Your cycle grade is the average of what you actually earn across each task.</p>
+  <p class="grade-note"><strong>The tier you choose sets that assignment's ceiling, not its score.</strong> Attempting Advanced work means up to 100 is possible on that task, not automatic; it's still graded on how well you execute it.</p>
   <p class="grade-note" style="margin-top:8px;">Reflection Check-Ins are graded Complete/Incomplete and don't factor into that average.</p>
 </div>
 
 <a class="dir-card dir-overview" href="overview.html">
-  <div class="dir-top"><h4>Project Overview — "My First House"</h4><span class="dir-badge" style="background:#FEF3C7; color:#92400E;">Placeholder</span></div>
-  <p>The year-long design project every cycle builds toward — still in development.</p>
+  <div class="dir-top"><h4>Project Overview — "My First House"</h4><span class="dir-badge">Start Here</span></div>
+  <p>The year-long design project every cycle builds toward — parameters &amp; Final Rubric.</p>
+</a>
+
+<a class="dir-card dir-overview" href="project-1.html">
+  <div class="dir-top"><h4>Project Details — Deliverables, Rubrics &amp; Critiques</h4><span class="dir-badge">Reference</span></div>
+  <p>Each cycle 1–8 has its own Project page with the deliverable description, tailored rubric, and critique questions where applicable. This links to Cycle 1's — every cycle page links to its own.</p>
 </a>
 
 <p class="section-label">The Year at a Glance</p>
